@@ -18,5 +18,4 @@ class JSONSerializer {
     init(_ object: Any) {
         self.object = JSON(object)
     }
-    
 }

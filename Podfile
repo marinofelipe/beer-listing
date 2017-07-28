@@ -9,6 +9,7 @@ target 'BeerListing' do
   #pod 'AlamofireImage'
   pod 'SwiftLint'
   pod 'SwiftyJSON'
+  pod 'ObjectMapper'
 
   target 'BeerListingTests' do
     inherit! :search_paths

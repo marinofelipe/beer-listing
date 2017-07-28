@@ -13,19 +13,41 @@ class BeersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     public var beers: [Beer] = []
+    fileprivate var page = 0
+    fileprivate var isLoading = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        activityIndicator.startAnimating()
-//        fetch()
         automaticallyAdjustsScrollViewInsets = false
-        mockBeers()
+        activityIndicator.startAnimating()
+        fetchBeers()
+//        mockBeers()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func fetchBeers() {
+        BeersHTTPClient.getBeers(page: page + 1, success: { (beers) in
+            guard beers.count > 0 else {
+                self.isLoading = false
+                self.activityIndicator.stopAnimating()
+                return
+            }
+            
+            self.isLoading = true
+            self.page += 1
+            
+        }) { (statusCode, response, error) in
+            print("status code: \(statusCode), response: \(response), error: \(error)")
+            //TODO: Treat error
+        }
+        
+        self.isLoading = false
+        self.activityIndicator.stopAnimating()
     }
     
     //FIXME: Remove mocked data
@@ -35,7 +57,7 @@ class BeersViewController: UIViewController {
         }
     }
     
-    //MARK: Navigation
+    // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.Segue.kShowDetail {
             if let destination = segue.destination as? DetailViewController {

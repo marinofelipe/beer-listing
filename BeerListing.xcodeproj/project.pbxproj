@@ -11,7 +11,7 @@
 		D57266BD1F2BBFA90006ADB3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266BC1F2BBFA90006ADB3 /* Reachability.swift */; };
 		D57266C11F2BC4B20006ADB3 /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266C01F2BC4B20006ADB3 /* JSONSerializer.swift */; };
 		D57266C31F2BC5520006ADB3 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266C21F2BC5520006ADB3 /* HTTPClient.swift */; };
-		D57C8F081F2BB71F00130A23 /* BeerHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C8F061F2BB71F00130A23 /* BeerHTTPClient.swift */; };
+		D57C8F081F2BB71F00130A23 /* BeersHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C8F061F2BB71F00130A23 /* BeersHTTPClient.swift */; };
 		D58640051F2B78830091C9E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58640041F2B78830091C9E0 /* AppDelegate.swift */; };
 		D58640071F2B78830091C9E0 /* BeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58640061F2B78830091C9E0 /* BeersViewController.swift */; };
 		D586400A1F2B78830091C9E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58640081F2B78830091C9E0 /* Main.storyboard */; };
@@ -57,7 +57,7 @@
 		D57266BC1F2BBFA90006ADB3 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D57266C01F2BC4B20006ADB3 /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
 		D57266C21F2BC5520006ADB3 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		D57C8F061F2BB71F00130A23 /* BeerHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerHTTPClient.swift; sourceTree = "<group>"; };
+		D57C8F061F2BB71F00130A23 /* BeersHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeersHTTPClient.swift; sourceTree = "<group>"; };
 		D58640011F2B78830091C9E0 /* BeerListing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerListing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58640041F2B78830091C9E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D58640061F2B78830091C9E0 /* BeersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersViewController.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				D57266C21F2BC5520006ADB3 /* HTTPClient.swift */,
-				D57C8F061F2BB71F00130A23 /* BeerHTTPClient.swift */,
+				D57C8F061F2BB71F00130A23 /* BeersHTTPClient.swift */,
 			);
 			path = networking;
 			sourceTree = "<group>";
@@ -578,7 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D57C8F081F2BB71F00130A23 /* BeerHTTPClient.swift in Sources */,
+				D57C8F081F2BB71F00130A23 /* BeersHTTPClient.swift in Sources */,
 				D58640071F2B78830091C9E0 /* BeersViewController.swift in Sources */,
 				D57266C11F2BC4B20006ADB3 /* JSONSerializer.swift in Sources */,
 				D58640401F2B82690091C9E0 /* Beer.swift in Sources */,

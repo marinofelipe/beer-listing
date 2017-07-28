@@ -11,8 +11,8 @@ import Foundation
 public struct Constants {
     
     struct API {
-        static let kBaseUrl = ""
-        static let kGetBeers = ""
+        static let kBaseUrl = "https://api.punkapi.com/v2/"
+        static let kGetBeers = "/beers"
     }
     
     struct Cell {
