@@ -269,7 +269,7 @@
 				TargetAttributes = {
 					D58640001F2B78830091C9E0 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = XRA36B72E4;
+						DevelopmentTeam = X9MK4PBNUW;
 						ProvisioningStyle = Automatic;
 					};
 					D58640141F2B78830091C9E0 = {
@@ -495,10 +495,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XRA36B72E4;
+				DEVELOPMENT_TEAM = X9MK4PBNUW;
 				INFOPLIST_FILE = BeerListing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = felipemarino.com.BeerListing;
+				PRODUCT_BUNDLE_IDENTIFIER = marinofelipe.com.BeerListing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -508,10 +508,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XRA36B72E4;
+				DEVELOPMENT_TEAM = X9MK4PBNUW;
 				INFOPLIST_FILE = BeerListing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = felipemarino.com.BeerListing;
+				PRODUCT_BUNDLE_IDENTIFIER = marinofelipe.com.BeerListing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
