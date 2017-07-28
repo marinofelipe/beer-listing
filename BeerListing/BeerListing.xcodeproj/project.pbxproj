@@ -18,6 +18,7 @@
 		D586403B1F2B7DC80091C9E0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D586403A1F2B7DC80091C9E0 /* DetailViewController.swift */; };
 		D586403D1F2B7FBD0091C9E0 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D586403C1F2B7FBD0091C9E0 /* DetailTableViewCell.swift */; };
 		D58640401F2B82690091C9E0 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D586403F1F2B82690091C9E0 /* Beer.swift */; };
+		D58640441F2BA8770091C9E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58640431F2BA8770091C9E0 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,8 @@
 		D58640381F2B7CD20091C9E0 /* BeerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
 		D586403A1F2B7DC80091C9E0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D586403C1F2B7FBD0091C9E0 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
-		D586403F1F2B82690091C9E0 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Beer.swift; path = models/Beer.swift; sourceTree = "<group>"; };
+		D586403F1F2B82690091C9E0 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		D58640431F2BA8770091C9E0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 		D586403E1F2B82390091C9E0 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				D58640421F2BA8330091C9E0 /* utils */,
 				D58640411F2B826E0091C9E0 /* models */,
 			);
 			path = Global;
@@ -198,7 +201,15 @@
 			children = (
 				D586403F1F2B82690091C9E0 /* Beer.swift */,
 			);
-			name = models;
+			path = models;
+			sourceTree = "<group>";
+		};
+		D58640421F2BA8330091C9E0 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				D58640431F2BA8770091C9E0 /* Constants.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +353,7 @@
 				D58640401F2B82690091C9E0 /* Beer.swift in Sources */,
 				D58640391F2B7CD20091C9E0 /* BeerTableViewCell.swift in Sources */,
 				D58640051F2B78830091C9E0 /* AppDelegate.swift in Sources */,
+				D58640441F2BA8770091C9E0 /* Constants.swift in Sources */,
 				D586403D1F2B7FBD0091C9E0 /* DetailTableViewCell.swift in Sources */,
 				D586403B1F2B7DC80091C9E0 /* DetailViewController.swift in Sources */,
 			);

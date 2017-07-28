@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,22 +22,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="G5Q-Of-0tv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="102" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="G5Q-Of-0tv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Sta-zN-bRL" customClass="BeerTableViewCell" customModule="BeerListing" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BeerCell" rowHeight="100" id="Sta-zN-bRL" customClass="BeerTableViewCell" customModule="BeerListing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sta-zN-bRL" id="72o-Ss-FkG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alcoholicStrength:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeH-Uy-WDf">
+                                                    <rect key="frame" x="8" y="47" width="126.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IXi-fk-Juj">
+                                                    <rect key="frame" x="277" y="10" width="30" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="clb-Yj-S31"/>
+                                                        <constraint firstAttribute="width" constant="30" id="jAc-6d-rQK"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5% abv" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRx-d2-jts">
+                                                    <rect key="frame" x="144" y="47" width="67" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="beer name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4R-J8-qoQ">
+                                                    <rect key="frame" x="8" y="8" width="102" height="24"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" red="0.092176649309999997" green="0.31124131939999999" blue="0.55617947050000005" alpha="0.78820633559999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="IXi-fk-Juj" secondAttribute="trailing" constant="60" id="C0h-Mw-3eK"/>
+                                                <constraint firstItem="IXi-fk-Juj" firstAttribute="centerY" secondItem="72o-Ss-FkG" secondAttribute="centerY" id="Eb7-M1-563"/>
+                                                <constraint firstItem="vRx-d2-jts" firstAttribute="centerY" secondItem="IeH-Uy-WDf" secondAttribute="centerY" id="Jg9-db-cpk"/>
+                                                <constraint firstItem="IeH-Uy-WDf" firstAttribute="top" secondItem="A4R-J8-qoQ" secondAttribute="bottom" constant="15" id="bEl-Qy-73I"/>
+                                                <constraint firstItem="vRx-d2-jts" firstAttribute="leading" secondItem="IeH-Uy-WDf" secondAttribute="trailing" constant="10" id="cKi-5I-Mwx"/>
+                                                <constraint firstItem="IeH-Uy-WDf" firstAttribute="leading" secondItem="A4R-J8-qoQ" secondAttribute="leading" id="p9Z-Ef-KRT"/>
+                                                <constraint firstAttribute="topMargin" secondItem="A4R-J8-qoQ" secondAttribute="top" id="qIk-HS-fjD"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="A4R-J8-qoQ" secondAttribute="leading" id="qze-di-m0n"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Dr0-oI-CQc" kind="show" id="OE5-Hc-jNc"/>
+                                            <outlet property="alcoholicStrength" destination="vRx-d2-jts" id="6zl-50-nWU"/>
+                                            <outlet property="mainImage" destination="IXi-fk-Juj" id="R31-xZ-kqK"/>
+                                            <outlet property="name" destination="A4R-J8-qoQ" id="p20-pH-5lv"/>
+                                            <segue destination="Dr0-oI-CQc" kind="show" identifier="ShowDetail" id="OE5-Hc-jNc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="FTp-bs-CPT"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5fy-SI-Eba"/>
+                                </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="v7t-UC-Arr">
                                 <rect key="frame" x="177" y="323" width="20" height="20"/>
@@ -74,42 +119,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="9xS-SC-jFR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="484" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="9xS-SC-jFR">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="esO-oE-iV3" customClass="DetailTableViewCell" customModule="BeerListing" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailCell" rowHeight="484" id="esO-oE-iV3" customClass="DetailTableViewCell" customModule="BeerListing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="484"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="esO-oE-iV3" id="beo-Ec-YtT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="483"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXy-eF-qbj">
+                                                    <rect key="frame" x="87" y="37" width="200" height="250"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="beer name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uj-FK-pKw">
+                                                    <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tagline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SP4-8p-Y6u">
+                                                    <rect key="frame" x="8" y="295" width="359" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="escala de amargor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAc-nN-iRf">
+                                                    <rect key="frame" x="24" y="336" width="141" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="teor alcóolico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mP0-1J-Brb">
+                                                    <rect key="frame" x="223" y="336" width="103" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgd-zp-MFw">
+                                                    <rect key="frame" x="8" y="373" width="359" height="102"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="alcoholicStrength" destination="mP0-1J-Brb" id="bgp-NJ-U7i"/>
+                                            <outlet property="mainDescription" destination="wgd-zp-MFw" id="w8T-0X-f7H"/>
+                                            <outlet property="mainImage" destination="UXy-eF-qbj" id="hiE-t1-goa"/>
+                                            <outlet property="name" destination="1uj-FK-pKw" id="NNs-cW-5Jv"/>
+                                            <outlet property="scaleOfBitterness" destination="fAc-nN-iRf" id="5bb-RS-2fk"/>
+                                            <outlet property="tagline" destination="SP4-8p-Y6u" id="tVR-oT-7Lz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Dr0-oI-CQc" id="Bhe-5l-JaG"/>
+                                    <outlet property="delegate" destination="Dr0-oI-CQc" id="kPX-7X-M7W"/>
+                                </connections>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="y0p-NF-eMI">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9xS-SC-jFR" secondAttribute="trailing" id="8gU-jr-DWB"/>
-                            <constraint firstItem="y0p-NF-eMI" firstAttribute="centerY" secondItem="khF-R1-FaO" secondAttribute="centerY" id="Feg-sb-VeE"/>
                             <constraint firstItem="9xS-SC-jFR" firstAttribute="top" secondItem="4Qk-eL-2Tf" secondAttribute="bottom" id="MOi-OB-cn2"/>
                             <constraint firstItem="pJi-EE-dS0" firstAttribute="top" secondItem="9xS-SC-jFR" secondAttribute="bottom" id="OcD-zL-Bkm"/>
-                            <constraint firstItem="y0p-NF-eMI" firstAttribute="centerX" secondItem="khF-R1-FaO" secondAttribute="centerX" id="cGt-ph-AeI"/>
                             <constraint firstItem="9xS-SC-jFR" firstAttribute="leading" secondItem="khF-R1-FaO" secondAttribute="leading" id="kyB-aj-B7G"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="y0p-NF-eMI" id="3vz-nA-o24"/>
                         <outlet property="tableView" destination="9xS-SC-jFR" id="9lQ-xh-C8o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lmq-Tj-BCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="124"/>
+            <point key="canvasLocation" x="1900" y="123.68815592203899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8cj-zC-7CP">

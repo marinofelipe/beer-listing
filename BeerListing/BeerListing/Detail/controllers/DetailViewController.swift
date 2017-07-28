@@ -11,17 +11,22 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    public var beer: Beer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        automaticallyAdjustsScrollViewInsets = false
+        mockBeer()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func mockBeer() {
+        beer = Beer(mainImage: UIImage(named: "image-beer")!, name: "Felipe Marino IPA Beer", alcoholicStrength: "4.8", tagline: "IPA", scaleOfBitterness: "4.9", mainDescription: "Felipe Marino IPA best beer on market you should prove it. Lorem ipsum, Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum")
     }
 }
 
@@ -32,13 +37,13 @@ extension DetailViewController: UITableViewDelegate {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.frame.height
+    }
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 5.0
     }
-    
-    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //
-    //    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 5.0
@@ -49,45 +54,25 @@ extension DetailViewController: UITableViewDelegate {
 extension DetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        return beers.count
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = UITableViewCell()
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cell.kIdDetail, for: indexPath) as? DetailTableViewCell {
+            if let beer = beer {
+                cell.mainImage.image = beer.mainImage
+                cell.name.text = beer.name
+                cell.alcoholicStrength.text = beer.alcoholicStrength
+                cell.scaleOfBitterness.text = beer.scaleOfBitterness
+                cell.tagline.text = beer.tagline
+                cell.mainDescription.text = beer.mainDescription
+
+                return cell
+            }
+        }
+        
         return cell
     }
-    
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        tableView.deselectRow(at: indexPath, animated: true)
-    //        print("row selected: \(indexPath.row)")
-    //
-    //        self.performSegue(withIdentifier: "", sender:tableView.cellForRow(at: indexPath))
-    //    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        //        if indexPath.row >= (beers.count - 10) && !self.isLoading {
-        //            self.fetch()
-        //        }
-    }
 }
-
-// MARK: - ScrollView Delegate
-extension DetailViewController: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        // calculates where the user is in the y-axis
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        
-        if offsetY > contentHeight - scrollView.frame.size.height {
-            
-            //                        fetch()
-            //            tableView.reloadData()
-        }
-    }
-}
-
