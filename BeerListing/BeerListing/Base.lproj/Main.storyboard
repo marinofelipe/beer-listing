@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Beers View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeerListing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BeersViewController" customModule="BeerListing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,12 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G5Q-Of-0tv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="G5Q-Of-0tv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Sta-zN-bRL">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Sta-zN-bRL" customClass="BeerTableViewCell" customModule="BeerListing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sta-zN-bRL" id="72o-Ss-FkG">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -38,25 +38,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="v7t-UC-Arr">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="G5Q-Of-0tv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Mc3-OE-3dg"/>
                             <constraint firstAttribute="trailing" secondItem="G5Q-Of-0tv" secondAttribute="trailing" id="Suf-oP-Msj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G5Q-Of-0tv" secondAttribute="bottom" id="bb2-wi-1BG"/>
+                            <constraint firstItem="v7t-UC-Arr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lII-7i-l3s"/>
+                            <constraint firstItem="v7t-UC-Arr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mrr-Br-y43"/>
                             <constraint firstItem="G5Q-Of-0tv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p6B-Dn-Qcv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qXG-pB-Lng"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="v7t-UC-Arr" id="XeW-7A-XQR"/>
+                        <outlet property="tableView" destination="G5Q-Of-0tv" id="KmZ-CX-HcP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="rb6-Ty-98z">
             <objects>
-                <viewController id="Dr0-oI-CQc" sceneMemberID="viewController">
+                <viewController id="Dr0-oI-CQc" customClass="DetailViewController" customModule="BeerListing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Qk-eL-2Tf"/>
                         <viewControllerLayoutGuide type="bottom" id="pJi-EE-dS0"/>
@@ -65,12 +74,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9xS-SC-jFR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="9xS-SC-jFR">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="esO-oE-iV3">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="esO-oE-iV3" customClass="DetailTableViewCell" customModule="BeerListing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="esO-oE-iV3" id="beo-Ec-YtT">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -79,15 +88,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="y0p-NF-eMI">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9xS-SC-jFR" secondAttribute="trailing" id="8gU-jr-DWB"/>
+                            <constraint firstItem="y0p-NF-eMI" firstAttribute="centerY" secondItem="khF-R1-FaO" secondAttribute="centerY" id="Feg-sb-VeE"/>
                             <constraint firstItem="9xS-SC-jFR" firstAttribute="top" secondItem="4Qk-eL-2Tf" secondAttribute="bottom" id="MOi-OB-cn2"/>
                             <constraint firstItem="pJi-EE-dS0" firstAttribute="top" secondItem="9xS-SC-jFR" secondAttribute="bottom" id="OcD-zL-Bkm"/>
+                            <constraint firstItem="y0p-NF-eMI" firstAttribute="centerX" secondItem="khF-R1-FaO" secondAttribute="centerX" id="cGt-ph-AeI"/>
                             <constraint firstItem="9xS-SC-jFR" firstAttribute="leading" secondItem="khF-R1-FaO" secondAttribute="leading" id="kyB-aj-B7G"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="y0p-NF-eMI" id="3vz-nA-o24"/>
+                        <outlet property="tableView" destination="9xS-SC-jFR" id="9lQ-xh-C8o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lmq-Tj-BCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
