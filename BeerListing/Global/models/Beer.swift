@@ -10,20 +10,20 @@ import UIKit
 import ObjectMapper
 
 //TODO: Add Object mapping
-public struct Beer: Mappable  {
-    public var mainImage: UIImage?
+public struct Beer: Mappable {
+    public var imageUrl: String?
     public var name: String?
-    public var alcoholicStrength: String?
+    public var alcoholicStrength: Double?
     public var tagline: String?
-    public var scaleOfBitterness: String?
+    public var scaleOfBitterness: Double?
     public var mainDescription: String?
     
     /// This function can be used to validate JSON prior to mapping. Return nil to cancel mapping at this point
     public init?(map: Map) {}
     
-    init(mainImage: UIImage, name: String, alcoholicStrength: String,
-                     tagline: String, scaleOfBitterness: String, mainDescription: String) {
-        self.mainImage = mainImage
+    init(imageUrl: String, name: String, alcoholicStrength: Double,
+         tagline: String, scaleOfBitterness: Double, mainDescription: String) {
+        self.imageUrl = imageUrl
         self.name = name
         self.alcoholicStrength = alcoholicStrength
         self.tagline = tagline
@@ -33,7 +33,7 @@ public struct Beer: Mappable  {
     
     // Mappable
     public mutating func mapping(map: Map) {
-        mainImage           <- map["image_url"]
+        imageUrl           <- map["image_url"]
         name                <- map["name"]
         alcoholicStrength   <- map["abv"]
         tagline             <- map["tagline"]
@@ -41,4 +41,3 @@ public struct Beer: Mappable  {
         mainDescription     <- map["description"]
     }
 }
-

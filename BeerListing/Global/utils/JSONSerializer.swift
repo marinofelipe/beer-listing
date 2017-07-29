@@ -18,4 +18,11 @@ class JSONSerializer {
     init(_ object: Any) {
         self.object = JSON(object)
     }
+    
+    public func null() -> Bool {
+        if let _ = object.null {
+            return true
+        }
+        return false
+    }
 }

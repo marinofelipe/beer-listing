@@ -19,10 +19,10 @@ class BeersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.backBarButtonItem?.plain()
         automaticallyAdjustsScrollViewInsets = false
         activityIndicator.startAnimating()
         fetchBeers()
-//        mockBeers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,30 +30,23 @@ class BeersViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func fetchBeers() {
+    fileprivate func fetchBeers() {
+        isLoading = true
+        activityIndicator.isHidden = false
         BeersHTTPClient.getBeers(page: page + 1, success: { (beers) in
             guard beers.count > 0 else {
-                self.isLoading = false
-                self.activityIndicator.stopAnimating()
                 return
             }
             
-            self.isLoading = true
+            self.beers += beers
+            self.tableView.reloadData()
             self.page += 1
             
+            self.fetchEnded()
         }) { (statusCode, response, error) in
             print("status code: \(statusCode), response: \(response), error: \(error)")
             //TODO: Treat error
-        }
-        
-        self.isLoading = false
-        self.activityIndicator.stopAnimating()
-    }
-    
-    //FIXME: Remove mocked data
-    private func mockBeers() {
-        for _ in 0..<10 {
-            beers.append(Beer(mainImage: UIImage(named: "image-beer")!, name: "Felipe Marino IPA Beer", alcoholicStrength: "4.8", tagline: "IPA", scaleOfBitterness: "4.9", mainDescription: "Felipe Marino IPA best beer on market you should prove it. Lorem ipsum, Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"))
+            self.fetchEnded()
         }
     }
     
@@ -66,6 +59,12 @@ class BeersViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func fetchEnded() {
+        isLoading = false
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
     }
 }
 
@@ -83,13 +82,6 @@ extension BeersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 5.0
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected row: \(indexPath.row)")
-        
-        self.performSegue(withIdentifier: Constants.Segue.kShowDetail, sender: self)
-//        self.performSegue(withIdentifier: Constants.Segue.kShowDetail, sender: tableView.cellForRow(at: indexPath))
-    }
 }
 
 // MARK: - TableView DataSource
@@ -105,9 +97,10 @@ extension BeersViewController: UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cell.kIdBeer, for: indexPath) as? BeerTableViewCell {
             
             let beer = beers[indexPath.row]
+            //FIXME: Remove force_casts
             cell.name.text = beer.name
-            cell.mainImage.image = beer.mainImage
-            cell.alcoholicStrength.text = beer.alcoholicStrength
+            cell.mainImage.load(stringUrl: beer.imageUrl!)
+            cell.alcoholicStrength.text = (beer.alcoholicStrength?.description)! + "% abv"
             
             return cell
         }
@@ -117,25 +110,8 @@ extension BeersViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-//        if indexPath.row >= (beers.count - 10) && !self.isLoading {
-//            self.fetch()
-//        }
-    }
-}
-
-// MARK: - ScrollView Delegate
-extension BeersViewController: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        // calculates where the user is in the y-axis
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        
-        if offsetY > contentHeight - scrollView.frame.size.height {
-            
-//                        fetch()
-//            tableView.reloadData()
+        if (indexPath.row > beers.count - 5) && !self.isLoading {
+            fetchBeers()
         }
     }
 }

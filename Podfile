@@ -6,7 +6,7 @@ target 'BeerListing' do
   use_frameworks!
   # Pods for BeerListing
   pod 'Alamofire'
-  #pod 'AlamofireImage'
+  pod 'AlamofireImage'
   pod 'SwiftLint'
   pod 'SwiftyJSON'
   pod 'ObjectMapper'

@@ -1,12 +1,7 @@
 //
-//  TransformOf.swift
-//  ObjectMapper
+//  Image.swift
 //
-//  Created by Tristan Himmelman on 8/22/16.
-//
-//  The MIT License (MIT)
-//
-//  Copyright (c) 2014-2016 Hearst
+//  Copyright (c) 2015-2016 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,27 +20,14 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+//
 
 import Foundation
 
-open class NSDecimalNumberTransform: TransformType {
-    public typealias Object = NSDecimalNumber
-    public typealias JSON = String
-
-    public init() {}
-
-    open func transformFromJSON(_ value: Any?) -> NSDecimalNumber? {
-        if let string = value as? String {
-            return NSDecimalNumber(string: string)
-        }
-        if let double = value as? Double {
-            return NSDecimalNumber(floatLiteral: double)
-        }
-        return nil
-    }
-
-    open func transformToJSON(_ value: NSDecimalNumber?) -> String? {
-        guard let value = value else { return nil }
-        return value.description
-    }
-}
+#if os(iOS) || os(tvOS) || os(watchOS)
+import UIKit
+public typealias Image = UIImage
+#elseif os(macOS)
+import Cocoa
+public typealias Image = NSImage
+#endif

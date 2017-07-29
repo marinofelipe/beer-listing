@@ -16,17 +16,13 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = beer?.name
         automaticallyAdjustsScrollViewInsets = false
-        mockBeer()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    private func mockBeer() {
-        beer = Beer(mainImage: UIImage(named: "image-beer")!, name: "Felipe Marino IPA Beer", alcoholicStrength: "4.8", tagline: "IPA", scaleOfBitterness: "4.9", mainDescription: "Felipe Marino IPA best beer on market you should prove it. Lorem ipsum, Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum")
     }
 }
 
@@ -62,10 +58,11 @@ extension DetailViewController: UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cell.kIdDetail, for: indexPath) as? DetailTableViewCell {
             if let beer = beer {
-                cell.mainImage.image = beer.mainImage
-                cell.name.text = beer.name
-                cell.alcoholicStrength.text = beer.alcoholicStrength
-                cell.scaleOfBitterness.text = beer.scaleOfBitterness
+                //TODO: do not download image again - do local saving of beers or pass image through segue/model
+                cell.mainImage.load(stringUrl: beer.imageUrl!)
+                cell.name.text = beer.name?.uppercased()
+                cell.alcoholicStrength.text = beer.alcoholicStrength!.description + "%"
+                cell.scaleOfBitterness.text = beer.scaleOfBitterness?.description
                 cell.tagline.text = beer.tagline
                 cell.mainDescription.text = beer.mainDescription
 

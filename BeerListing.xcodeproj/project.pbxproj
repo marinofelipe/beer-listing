@@ -12,6 +12,8 @@
 		D57266C11F2BC4B20006ADB3 /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266C01F2BC4B20006ADB3 /* JSONSerializer.swift */; };
 		D57266C31F2BC5520006ADB3 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266C21F2BC5520006ADB3 /* HTTPClient.swift */; };
 		D57C8F081F2BB71F00130A23 /* BeersHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C8F061F2BB71F00130A23 /* BeersHTTPClient.swift */; };
+		D57D64B01F2CF03000A28245 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D64AF1F2CF03000A28245 /* UIImageView.swift */; };
+		D57D64B21F2D2DAB00A28245 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D64B11F2D2DAB00A28245 /* UIBarButtonItem.swift */; };
 		D58640051F2B78830091C9E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58640041F2B78830091C9E0 /* AppDelegate.swift */; };
 		D58640071F2B78830091C9E0 /* BeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58640061F2B78830091C9E0 /* BeersViewController.swift */; };
 		D586400A1F2B78830091C9E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58640081F2B78830091C9E0 /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 		D57266C01F2BC4B20006ADB3 /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
 		D57266C21F2BC5520006ADB3 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D57C8F061F2BB71F00130A23 /* BeersHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeersHTTPClient.swift; sourceTree = "<group>"; };
+		D57D64AF1F2CF03000A28245 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		D57D64B11F2D2DAB00A28245 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		D58640011F2B78830091C9E0 /* BeerListing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerListing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58640041F2B78830091C9E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D58640061F2B78830091C9E0 /* BeersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 		D57C8EFE1F2BB70A00130A23 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D57D64AF1F2CF03000A28245 /* UIImageView.swift */,
+				D57D64B11F2D2DAB00A28245 /* UIBarButtonItem.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -582,7 +588,9 @@
 				D58640071F2B78830091C9E0 /* BeersViewController.swift in Sources */,
 				D57266C11F2BC4B20006ADB3 /* JSONSerializer.swift in Sources */,
 				D58640401F2B82690091C9E0 /* Beer.swift in Sources */,
+				D57D64B01F2CF03000A28245 /* UIImageView.swift in Sources */,
 				D58640391F2B7CD20091C9E0 /* BeerTableViewCell.swift in Sources */,
+				D57D64B21F2D2DAB00A28245 /* UIBarButtonItem.swift in Sources */,
 				D58640051F2B78830091C9E0 /* AppDelegate.swift in Sources */,
 				D57266C31F2BC5520006ADB3 /* HTTPClient.swift in Sources */,
 				D58640441F2BA8770091C9E0 /* Constants.swift in Sources */,

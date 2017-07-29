@@ -25,14 +25,16 @@ class HTTPClient {
                                             failure: @escaping CompletionApiFailure) {
         
         guard Reachability.isConnected() else {
+            //TODO: Enum for status returns
             failure(9999, nil, nil)
             return
         }
         
+        //FIXME: add timeout
+        
         let alamofireMethod = Alamofire.HTTPMethod(rawValue: method.rawValue)!
         
         //FIXME: Remove unecessary headers
-        //TODO: Look if JSONSerializer is necessary
         Alamofire.request(url, method: alamofireMethod, parameters: parameters, encoding: JSONEncoding.default,
                           headers: ["Accept": "application/json"])
             .validate(contentType: ["application/json"])
