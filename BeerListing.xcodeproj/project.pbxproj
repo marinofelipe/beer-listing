@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49102255EECF76F6003F7799 /* Pods_BeerListingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805D93F96D5E7B73B7BA5117 /* Pods_BeerListingUITests.framework */; };
+		D563C4041F2E838200F08CF5 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D563C4031F2E838200F08CF5 /* RefreshControl.swift */; };
 		D57266BD1F2BBFA90006ADB3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266BC1F2BBFA90006ADB3 /* Reachability.swift */; };
 		D57266C11F2BC4B20006ADB3 /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266C01F2BC4B20006ADB3 /* JSONSerializer.swift */; };
 		D57266C31F2BC5520006ADB3 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266C21F2BC5520006ADB3 /* HTTPClient.swift */; };
@@ -56,6 +57,7 @@
 		65A4CE332CAAC29D0F5C6606 /* Pods-BeerListingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerListingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerListingUITests/Pods-BeerListingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		805D93F96D5E7B73B7BA5117 /* Pods_BeerListingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerListingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9416705713064DCF563D06DE /* Pods-BeerListingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerListingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerListingTests/Pods-BeerListingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D563C4031F2E838200F08CF5 /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		D57266BC1F2BBFA90006ADB3 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D57266C01F2BC4B20006ADB3 /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
 		D57266C21F2BC5520006ADB3 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				D58640431F2BA8770091C9E0 /* Constants.swift */,
 				D57266BC1F2BBFA90006ADB3 /* Reachability.swift */,
 				D57266C01F2BC4B20006ADB3 /* JSONSerializer.swift */,
+				D563C4031F2E838200F08CF5 /* RefreshControl.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				D57D64B21F2D2DAB00A28245 /* UIBarButtonItem.swift in Sources */,
 				D58640051F2B78830091C9E0 /* AppDelegate.swift in Sources */,
 				D57266C31F2BC5520006ADB3 /* HTTPClient.swift in Sources */,
+				D563C4041F2E838200F08CF5 /* RefreshControl.swift in Sources */,
 				D58640441F2BA8770091C9E0 /* Constants.swift in Sources */,
 				D586403D1F2B7FBD0091C9E0 /* DetailTableViewCell.swift in Sources */,
 				D57266BD1F2BBFA90006ADB3 /* Reachability.swift in Sources */,

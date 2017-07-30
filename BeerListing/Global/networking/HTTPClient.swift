@@ -8,47 +8,63 @@
 
 import Alamofire
 
-typealias CompletionApiSuccess = (_ statusCode: Int, _ response: Any?) -> Void
-typealias CompletionApiFailure = (_ statusCode: Int, _ response: Any?, _ error: Error?) -> Void
+enum HttpVerb: String {
+    case GET, POST, PUT, DELETE
+}
+
+enum StatusCode: Int {
+    case offline = 999
+    case notFound = 404
+    case badRequest = 500
+    case success = 200
+    case unknown = 666
+}
+
+typealias CompletionApiSuccess = (_ statusCode: StatusCode, _ response: Any?) -> Void
+typealias CompletionApiFailure = (_ statusCode: StatusCode, _ response: Any?, _ error: Error?) -> Void
 
 class HTTPClient {
-    
-    enum HttpVerb: String {
-        case GET, POST, PUT, DELETE
-    }
-    
-    //TODO: Map bad requests returns
-    
+
     fileprivate class func requestAlamofire(method: HttpVerb, url: String,
                                             parameters: [String : AnyObject]?,
                                             success: @escaping CompletionApiSuccess,
                                             failure: @escaping CompletionApiFailure) {
         
         guard Reachability.isConnected() else {
-            //TODO: Enum for status returns
-            failure(9999, nil, nil)
+            failure(.offline, nil, nil)
             return
         }
         
-        //FIXME: add timeout
-        
         let alamofireMethod = Alamofire.HTTPMethod(rawValue: method.rawValue)!
+        let manager = Alamofire.SessionManager.default
+        manager.session.configuration.timeoutIntervalForRequest = 30
         
-        //FIXME: Remove unecessary headers
-        Alamofire.request(url, method: alamofireMethod, parameters: parameters, encoding: JSONEncoding.default,
-                          headers: ["Accept": "application/json"])
-            .validate(contentType: ["application/json"])
-            .responseJSON { response in
-                
-                let value = response.result.value
-                let code = response.response?.statusCode
-                
-                switch response.result {
-                case .success:
-                    success(code!, value!)
-                case .failure(let error):
-                    failure(code!, value!, error)
+        manager.request(url, method: alamofireMethod, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            
+            let value = response.result.value
+            
+            //Handling failure on responses
+            switch response.result {
+            case .failure(let error):
+                failure(.unknown, value, error)
+                break
+            default:
+                break
+            }
+            
+            //Handling different types of success responses, as 200, 404..
+            if let code = response.response?.statusCode, let value = value {
+                switch code {
+                case StatusCode.success.rawValue:
+                    success(.success, value)
+                default:
+                    if let statusCode = StatusCode(rawValue: code) {
+                        failure(statusCode, value, response.error)
+                    } else {
+                        failure(.unknown, value, response.error)
+                    }
                 }
+            }
         }
     }
     

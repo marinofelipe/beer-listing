@@ -12,6 +12,8 @@ class BeersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var noDataLabel: UILabel!
+    private var refreshControl: RefreshControl?
     public var beers: [Beer] = []
     fileprivate var page = 0
     fileprivate var isLoading = true
@@ -21,15 +23,26 @@ class BeersViewController: UIViewController {
         
         navigationItem.backBarButtonItem?.plain()
         automaticallyAdjustsScrollViewInsets = false
+        noDataLabel.isHidden = true
         activityIndicator.startAnimating()
+        configTableView()
         fetchBeers()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK: TableView
+    private func configTableView() {
+        refreshControl = RefreshControl.init(withTitle: "Fetching Weather Data...")
+        refreshControl?.delegate = self
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            if let refreshControl = refreshControl {
+                tableView.addSubview(refreshControl)
+            }
+        }
     }
     
+    // MARK: Fetch
     fileprivate func fetchBeers() {
         isLoading = true
         activityIndicator.isHidden = false
@@ -38,15 +51,20 @@ class BeersViewController: UIViewController {
                 return
             }
             
-            self.beers += beers
-            self.tableView.reloadData()
-            self.page += 1
+            DispatchQueue.main.async {
+                self.beers += beers
+                self.tableView.reloadData()
+                self.page += 1
+                self.noDataLabel.isHidden = true
+                self.fetchEnded()
+            }
+        }) { (_, _, _) in
+            //could handle errors by type
+            self.noDataLabel.isHidden = false
             
-            self.fetchEnded()
-        }) { (statusCode, response, error) in
-            print("status code: \(statusCode), response: \(response), error: \(error)")
-            //TODO: Treat error
-            self.fetchEnded()
+            DispatchQueue.main.async {
+                self.fetchEnded()
+            }
         }
     }
     
@@ -63,6 +81,7 @@ class BeersViewController: UIViewController {
     
     private func fetchEnded() {
         isLoading = false
+        refreshControl?.endRefreshing()
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
     }
@@ -109,9 +128,15 @@ extension BeersViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
         if (indexPath.row > beers.count - 5) && !self.isLoading {
             fetchBeers()
         }
+    }
+}
+
+// MARK: RefreshControlDelegate
+extension BeersViewController: RefreshControlDelegate {
+    func willRefresh() {
+        fetchBeers()
     }
 }

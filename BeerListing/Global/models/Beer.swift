@@ -9,7 +9,6 @@
 import UIKit
 import ObjectMapper
 
-//TODO: Add Object mapping
 public struct Beer: Mappable {
     public var imageUrl: String?
     public var name: String?

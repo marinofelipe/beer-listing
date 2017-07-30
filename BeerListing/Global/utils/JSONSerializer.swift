@@ -8,8 +8,8 @@
 
 import SwiftyJSON
 
-typealias CompletionJSONSuccess = (_ statusCode: Int, _ response: JSONSerializer) -> Void
-typealias CompletionJSONFailure = (_ statusCode: Int, _ response: Any?, _ error: Error?) -> Void
+typealias CompletionJSONSuccess = (_ statusCode: StatusCode, _ response: JSONSerializer) -> Void
+typealias CompletionJSONFailure = (_ statusCode: StatusCode, _ response: Any?, _ error: Error?) -> Void
 
 class JSONSerializer {
     
