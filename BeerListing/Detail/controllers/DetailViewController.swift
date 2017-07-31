@@ -24,6 +24,12 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Actions
+    
+    @IBAction func didTapShare(_ sender: Any) {
+        share(withInitialText: "", image: beer?.image)
+    }
 }
 
 // MARK: - TableView Delegate

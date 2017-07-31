@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3G1-oD-qm1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3G1-oD-qm1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -262,6 +262,13 @@ Pull to Refresh.                </string>
                             <constraint firstItem="9xS-SC-jFR" firstAttribute="leading" secondItem="khF-R1-FaO" secondAttribute="leading" id="kyB-aj-B7G"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Dg1-MX-Sbm">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="Mmb-YA-fny">
+                            <connections>
+                                <action selector="didTapShare:" destination="Dr0-oI-CQc" id="SUE-tt-iJu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="9xS-SC-jFR" id="9lQ-xh-C8o"/>
                     </connections>

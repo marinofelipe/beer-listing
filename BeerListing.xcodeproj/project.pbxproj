@@ -12,7 +12,6 @@
 		D57266BD1F2BBFA90006ADB3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266BC1F2BBFA90006ADB3 /* Reachability.swift */; };
 		D57266C11F2BC4B20006ADB3 /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266C01F2BC4B20006ADB3 /* JSONSerializer.swift */; };
 		D57266C31F2BC5520006ADB3 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266C21F2BC5520006ADB3 /* HTTPClient.swift */; };
-		D57C8F081F2BB71F00130A23 /* BeersHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C8F061F2BB71F00130A23 /* BeersHTTPClient.swift */; };
 		D57D64B01F2CF03000A28245 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D64AF1F2CF03000A28245 /* UIImageView.swift */; };
 		D57D64B21F2D2DAB00A28245 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D64B11F2D2DAB00A28245 /* UIBarButtonItem.swift */; };
 		D58640051F2B78830091C9E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58640041F2B78830091C9E0 /* AppDelegate.swift */; };
@@ -27,6 +26,8 @@
 		D586403D1F2B7FBD0091C9E0 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D586403C1F2B7FBD0091C9E0 /* DetailTableViewCell.swift */; };
 		D58640401F2B82690091C9E0 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D586403F1F2B82690091C9E0 /* Beer.swift */; };
 		D58640441F2BA8770091C9E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58640431F2BA8770091C9E0 /* Constants.swift */; };
+		D5CA7BC61F2F653000A592ED /* BeersHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C8F061F2BB71F00130A23 /* BeersHTTPClient.swift */; };
+		D5CA7BC81F2F678E00A592ED /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CA7BC71F2F678E00A592ED /* UIViewController.swift */; };
 		E00E122526D1801C4283C0C1 /* Pods_BeerListing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327F2339211B0DA9E8D619A7 /* Pods_BeerListing.framework */; };
 		F43D888A82C1E5B81B34FAE4 /* Pods_BeerListingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61D487C4C02CE5BC3BEFCB1A /* Pods_BeerListingTests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		D586403C1F2B7FBD0091C9E0 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		D586403F1F2B82690091C9E0 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		D58640431F2BA8770091C9E0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D5CA7BC71F2F678E00A592ED /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = BeerListing/Global/extensions/UIViewController.swift; sourceTree = SOURCE_ROOT; };
 		FFDA04920E2AD8350C943D0B /* Pods-BeerListing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerListing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerListing/Pods-BeerListing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 		D57C8EFE1F2BB70A00130A23 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D5CA7BC71F2F678E00A592ED /* UIViewController.swift */,
 				D57D64AF1F2CF03000A28245 /* UIImageView.swift */,
 				D57D64B11F2D2DAB00A28245 /* UIBarButtonItem.swift */,
 			);
@@ -587,7 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D57C8F081F2BB71F00130A23 /* BeersHTTPClient.swift in Sources */,
+				D5CA7BC61F2F653000A592ED /* BeersHTTPClient.swift in Sources */,
 				D58640071F2B78830091C9E0 /* BeersViewController.swift in Sources */,
 				D57266C11F2BC4B20006ADB3 /* JSONSerializer.swift in Sources */,
 				D58640401F2B82690091C9E0 /* Beer.swift in Sources */,
@@ -595,6 +598,7 @@
 				D58640391F2B7CD20091C9E0 /* BeerTableViewCell.swift in Sources */,
 				D57D64B21F2D2DAB00A28245 /* UIBarButtonItem.swift in Sources */,
 				D58640051F2B78830091C9E0 /* AppDelegate.swift in Sources */,
+				D5CA7BC81F2F678E00A592ED /* UIViewController.swift in Sources */,
 				D57266C31F2BC5520006ADB3 /* HTTPClient.swift in Sources */,
 				D563C4041F2E838200F08CF5 /* RefreshControl.swift in Sources */,
 				D58640441F2BA8770091C9E0 /* Constants.swift in Sources */,
