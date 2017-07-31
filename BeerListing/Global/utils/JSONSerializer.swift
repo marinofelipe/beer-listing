@@ -20,7 +20,7 @@ class JSONSerializer {
     }
     
     public func null() -> Bool {
-        if let _ = object.null {
+        if object.null != nil {
             return true
         }
         return false

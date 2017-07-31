@@ -10,15 +10,23 @@ import UIKit
 import ObjectMapper
 
 public struct Beer: Mappable {
-    public var imageUrl: String?
-    public var name: String?
-    public var alcoholicStrength: Double?
-    public var tagline: String?
-    public var scaleOfBitterness: Double?
-    public var mainDescription: String?
+    public var image: UIImage?
+    public var imageUrl: String
+    public var name: String
+    public var alcoholicStrength: Double
+    public var tagline: String
+    public var scaleOfBitterness: Double
+    public var mainDescription: String
     
     /// This function can be used to validate JSON prior to mapping. Return nil to cancel mapping at this point
-    public init?(map: Map) {}
+    public init?(map: Map) {
+        imageUrl = ""
+        name = ""
+        alcoholicStrength = 0.0
+        tagline = ""
+        scaleOfBitterness = 0.0
+        mainDescription = ""
+    }
     
     init(imageUrl: String, name: String, alcoholicStrength: Double,
          tagline: String, scaleOfBitterness: Double, mainDescription: String) {

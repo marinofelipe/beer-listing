@@ -9,14 +9,18 @@
 import UIKit
 import AlamofireImage
 
+public typealias DidDownloadImage = () -> Void
+
 extension UIImageView {
     
-    func load(stringUrl: String) {
+    func load(stringUrl: String, completionImage: @escaping DidDownloadImage) {
         if let url = URL(string: stringUrl) {
             self.af_setImage(withURL: url, placeholderImage: UIImage(named: "beer-placeholder"),
                              filter: nil, progress: nil, progressQueue: DispatchQueue.main,
                              imageTransition: .crossDissolve(0.2), runImageTransitionIfCached: false,
-                             completion: nil)
+                             completion: { _ in
+                                completionImage()
+            })
         }
     }
 }

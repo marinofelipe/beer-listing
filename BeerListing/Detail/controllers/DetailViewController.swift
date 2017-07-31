@@ -58,11 +58,12 @@ extension DetailViewController: UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cell.kIdDetail, for: indexPath) as? DetailTableViewCell {
             if let beer = beer {
-                //TODO: do not download image again - do local saving of beers or pass image through segue/model
-                cell.mainImage.load(stringUrl: beer.imageUrl!)
-                cell.name.text = beer.name?.uppercased()
-                cell.alcoholicStrength.text = beer.alcoholicStrength!.description + "%"
-                cell.scaleOfBitterness.text = beer.scaleOfBitterness?.description
+                if let image = beer.image {
+                    cell.mainImage.image = image
+                }
+                cell.name.text = beer.name.uppercased()
+                cell.alcoholicStrength.text = beer.alcoholicStrength.description + "%"
+                cell.scaleOfBitterness.text = beer.scaleOfBitterness.description
                 cell.tagline.text = beer.tagline
                 cell.mainDescription.text = beer.mainDescription
 

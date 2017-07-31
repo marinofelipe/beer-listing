@@ -46,6 +46,7 @@ class BeersViewController: UIViewController {
     fileprivate func fetchBeers() {
         isLoading = true
         activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         BeersHTTPClient.getBeers(page: page + 1, success: { (beers) in
             guard beers.count > 0 else {
                 return
@@ -116,10 +117,11 @@ extension BeersViewController: UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cell.kIdBeer, for: indexPath) as? BeerTableViewCell {
             
             let beer = beers[indexPath.row]
-            //FIXME: Remove force_casts
             cell.name.text = beer.name
-            cell.mainImage.load(stringUrl: beer.imageUrl!)
-            cell.alcoholicStrength.text = (beer.alcoholicStrength?.description)! + "% abv"
+            cell.mainImage.load(stringUrl: beer.imageUrl, completionImage: { _ in
+                self.beers[indexPath.row].image = cell.mainImage.image
+            })
+            cell.alcoholicStrength.text = beer.alcoholicStrength.description + "% abv"
             
             return cell
         }
