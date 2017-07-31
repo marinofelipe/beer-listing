@@ -15,7 +15,7 @@ extension UIImageView {
     
     func load(stringUrl: String, completionImage: @escaping DidDownloadImage) {
         if let url = URL(string: stringUrl) {
-            self.af_setImage(withURL: url, placeholderImage: UIImage(named: "beer-placeholder"),
+            self.af_setImage(withURL: url, placeholderImage: UIImage(named: Constants.Beers.kImagePlaceholder),
                              filter: nil, progress: nil, progressQueue: DispatchQueue.main,
                              imageTransition: .crossDissolve(0.2), runImageTransitionIfCached: false,
                              completion: { _ in

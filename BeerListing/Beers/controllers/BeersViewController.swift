@@ -31,7 +31,7 @@ class BeersViewController: UIViewController {
     
     // MARK: TableView
     private func configTableView() {
-        refreshControl = RefreshControl.init(withTitle: "Fetching Weather Data...")
+        refreshControl = RefreshControl.init(withTitle: Constants.Beers.kFetchText)
         refreshControl?.delegate = self
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl

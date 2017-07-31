@@ -17,7 +17,7 @@ public enum SharingPlataform: String {
 extension UIViewController {
     
     public func share(withInitialText initialText: String?, image: UIImage?) {
-        let alert = UIAlertController(title: "Select platform to share your beer", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: Constants.Beers.kShareTitle, message: "", preferredStyle: .alert)
         let facebookAction = UIAlertAction.init(title: "facebook", style: .default) { _ in
             self.share(onPlatform: .facebook, initialText: initialText, image: image)
         }
