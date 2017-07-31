@@ -14,6 +14,7 @@ target 'BeerListing' do
   target 'BeerListingTests' do
     inherit! :search_paths
     # Pods for testing
+  pod 'Alamofire'
   end
 
   target 'BeerListingUITests' do

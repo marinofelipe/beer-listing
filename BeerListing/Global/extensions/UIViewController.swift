@@ -16,6 +16,11 @@ public enum SharingPlataform: String {
 
 extension UIViewController {
     
+    //to make tests more readable
+    func preloadView() {
+        _ = view
+    }
+    
     public func share(withInitialText initialText: String?, image: UIImage?) {
         let alert = UIAlertController(title: Constants.Beers.kShareTitle, message: "", preferredStyle: .alert)
         let facebookAction = UIAlertAction.init(title: "facebook", style: .default) { _ in

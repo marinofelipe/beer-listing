@@ -70,7 +70,6 @@ class HTTPClient {
     
     class func request(method: HttpVerb, url: String,
                        parameters: [String : AnyObject]?,
-                       joinAuthToken: Bool = true,
                        success: @escaping CompletionJSONSuccess,
                        failure: @escaping CompletionJSONFailure) {
         
@@ -85,10 +84,5 @@ class HTTPClient {
         }) { (statusCode, _, error) in
             failure(statusCode, nil, error)
         }
-        
-    }
-    
-    class func request(method: HttpVerb, url: String, success: @escaping CompletionJSONSuccess, failure: @escaping CompletionJSONFailure) {
-        self.request(method: method, url: url, parameters: nil, success: success, failure: failure)
     }
 }

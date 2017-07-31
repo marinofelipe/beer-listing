@@ -43,7 +43,8 @@ class BeersViewController: UIViewController {
     }
     
     // MARK: Fetch
-    fileprivate func fetchBeers() {
+    //Open to test performance, otherwise would have to encapsulate on a framework
+    open func fetchBeers() {
         isLoading = true
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()

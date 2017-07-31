@@ -29,4 +29,8 @@ public struct Constants {
         static let kImagePlaceholder = "beer-placeholder"
         static let kShareTitle = "Select a platform to share your beer."
     }
+    
+    struct Storyboard {
+        static let kBeersVCId = "BeersViewController"
+     }
 }
