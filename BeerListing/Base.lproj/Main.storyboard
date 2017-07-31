@@ -184,7 +184,7 @@ Pull to Refresh.                </string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuW-UA-B3V">
-                                                    <rect key="frame" x="128" y="392" width="120" height="60"/>
+                                                    <rect key="frame" x="128" y="385.5" width="120" height="60"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzZ-Dy-c7D">
                                                             <rect key="frame" x="7" y="7" width="36" height="21"/>
@@ -242,12 +242,10 @@ Pull to Refresh.                </string>
                                                 <constraint firstItem="UXy-eF-qbj" firstAttribute="leading" secondItem="beo-Ec-YtT" secondAttribute="leadingMargin" constant="276" id="L49-uQ-8lc">
                                                     <variation key="heightClass=compact" constant="10"/>
                                                 </constraint>
-                                                <constraint firstItem="xuW-UA-B3V" firstAttribute="top" secondItem="wgd-zp-MFw" secondAttribute="bottom" constant="15" id="MqN-qB-crm">
-                                                    <variation key="heightClass=compact" constant="28"/>
-                                                </constraint>
                                                 <constraint firstItem="SP4-8p-Y6u" firstAttribute="trailing" secondItem="1uj-FK-pKw" secondAttribute="trailing" id="On4-bB-WTc">
                                                     <variation key="heightClass=compact" constant="0.0"/>
                                                 </constraint>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xuW-UA-B3V" secondAttribute="bottom" constant="30" id="e1Q-yt-K5c"/>
                                                 <constraint firstItem="wgd-zp-MFw" firstAttribute="top" secondItem="SP4-8p-Y6u" secondAttribute="bottom" constant="10" id="ge8-m1-CrJ">
                                                     <variation key="heightClass=compact" constant="8"/>
                                                 </constraint>

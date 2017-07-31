@@ -12,6 +12,10 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     public var beer: Beer?
+    static var isPresented = false
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +24,17 @@ class DetailViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DetailViewController.isPresented = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        DetailViewController.isPresented = false
     }
     
     // MARK: Actions
-    
     @IBAction func didTapShare(_ sender: Any) {
         share(withInitialText: "", image: beer?.image)
     }

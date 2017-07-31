@@ -13,6 +13,9 @@ class BeersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var noDataLabel: UILabel!
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
     private var refreshControl: RefreshControl?
     public var beers: [Beer] = []
     fileprivate var page = 0

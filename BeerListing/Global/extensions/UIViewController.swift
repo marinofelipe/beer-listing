@@ -15,7 +15,6 @@ public enum SharingPlataform: String {
 }
 
 extension UIViewController {
-    
     //to make tests more readable
     func preloadView() {
         _ = view
