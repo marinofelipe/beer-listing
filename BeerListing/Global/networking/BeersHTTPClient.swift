@@ -15,7 +15,7 @@ typealias CompletionBeersFailure = (_ statusCode: StatusCode, _ response: Any?, 
 class BeersHTTPClient: HTTPClient {
     
     class func getBeers(page: Int, success: @escaping CompletionBeersSuccess, failure: @escaping CompletionBeersFailure) {
-        let url = "\(Constants.API.kBaseUrl)\(Constants.API.kGetBeers)?page=\(page)&per_page=10"
+        let url = "\(Constants.API.kBaseUrl)\(Constants.API.kGetBeers)?page=\(page)&per_page=16"
         
         super.request(method: .GET, url: url, parameters: nil, success: { (statusCode, response) in
             

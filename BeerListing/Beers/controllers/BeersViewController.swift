@@ -134,7 +134,7 @@ extension BeersViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if (indexPath.row > beers.count - 5) && !self.isLoading {
+        if (indexPath.row > beers.count - 7) && !self.isLoading {
             fetchBeers()
         }
     }
