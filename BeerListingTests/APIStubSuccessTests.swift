@@ -106,6 +106,8 @@ class APIStubSuccessTests: XCTestCase {
         let promise = expectation(description: "received array of beer")
         BeersHTTPClient.getBeers(page: 1, success: { beers in
             self.underTestController.beers = beers
+            
+            //It expects 10 itens because it uses the stub file beers.json
             XCTAssertEqual(self.underTestController.beers.count, 10)
             promise.fulfill()
         }) { (_, _, _) in
