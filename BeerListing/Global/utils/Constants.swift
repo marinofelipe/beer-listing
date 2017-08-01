@@ -12,7 +12,7 @@ public struct Constants {
     
     struct API {
         static let kBaseUrl = "https://api.punkapi.com/v2/"
-        static let kGetBeers = "/beers"
+        static let kGetBeers = "beers"
     }
     
     struct Cell {

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		49102255EECF76F6003F7799 /* Pods_BeerListingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805D93F96D5E7B73B7BA5117 /* Pods_BeerListingUITests.framework */; };
 		D563C4041F2E838200F08CF5 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D563C4031F2E838200F08CF5 /* RefreshControl.swift */; };
+		D56687F11F30BDE200E8EAEF /* APIStubSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56687F01F30BDE200E8EAEF /* APIStubSuccessTests.swift */; };
+		D56687F31F30BE9F00E8EAEF /* APIStubFailureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56687F21F30BE9F00E8EAEF /* APIStubFailureTests.swift */; };
 		D57266BD1F2BBFA90006ADB3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266BC1F2BBFA90006ADB3 /* Reachability.swift */; };
 		D57266C11F2BC4B20006ADB3 /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266C01F2BC4B20006ADB3 /* JSONSerializer.swift */; };
 		D57266C31F2BC5520006ADB3 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57266C21F2BC5520006ADB3 /* HTTPClient.swift */; };
@@ -61,6 +63,8 @@
 		805D93F96D5E7B73B7BA5117 /* Pods_BeerListingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerListingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9416705713064DCF563D06DE /* Pods-BeerListingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerListingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerListingTests/Pods-BeerListingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D563C4031F2E838200F08CF5 /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		D56687F01F30BDE200E8EAEF /* APIStubSuccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIStubSuccessTests.swift; sourceTree = "<group>"; };
+		D56687F21F30BE9F00E8EAEF /* APIStubFailureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIStubFailureTests.swift; sourceTree = "<group>"; };
 		D57266BC1F2BBFA90006ADB3 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D57266C01F2BC4B20006ADB3 /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
 		D57266C21F2BC5520006ADB3 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -201,8 +205,10 @@
 		D58640181F2B78830091C9E0 /* BeerListingTests */ = {
 			isa = PBXGroup;
 			children = (
-				D5C02B001F2FB6E400B003DE /* BeersViewControllerTests.swift */,
 				D5C9C4C31F2F7BD600A87901 /* APITests.swift */,
+				D56687F21F30BE9F00E8EAEF /* APIStubFailureTests.swift */,
+				D56687F01F30BDE200E8EAEF /* APIStubSuccessTests.swift */,
+				D5C02B001F2FB6E400B003DE /* BeersViewControllerTests.swift */,
 				D586401B1F2B78830091C9E0 /* Info.plist */,
 				D5C02B021F2FB9C000B003DE /* beers.json */,
 			);
@@ -621,6 +627,8 @@
 			files = (
 				D5C02B011F2FB6E400B003DE /* BeersViewControllerTests.swift in Sources */,
 				D5C9C4C41F2F7BD600A87901 /* APITests.swift in Sources */,
+				D56687F11F30BDE200E8EAEF /* APIStubSuccessTests.swift in Sources */,
+				D56687F31F30BE9F00E8EAEF /* APIStubFailureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

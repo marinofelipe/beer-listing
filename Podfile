@@ -10,6 +10,7 @@ target 'BeerListing' do
   pod 'SwiftLint'
   pod 'SwiftyJSON'
   pod 'ObjectMapper'
+  pod 'OHHTTPStubs/Swift'
 
   target 'BeerListingTests' do
     inherit! :search_paths
