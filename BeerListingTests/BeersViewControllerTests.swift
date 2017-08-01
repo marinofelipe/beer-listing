@@ -42,7 +42,7 @@ class BeersViewControllerTests: XCTestCase {
         XCTAssertEqual(underTestController.beers.count, 0)
         let promise = expectation(description: "received array of beer")
         BeersHTTPClient.getBeers(page: 1, success: { beers in
-
+            self.underTestController.beers = beers
             XCTAssertEqual(self.underTestController.beers.count, 10)
             promise.fulfill()
         }) { (_, _, _) in
