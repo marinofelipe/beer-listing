@@ -1,0 +1,9 @@
+osx_image: xcode12
+language: swift
+
+env:
+  - PROJECT_NAME=BeerList
+install: (cd $PROJECT_NAME && swift package update)
+script:
+  - (cd $PROJECT_NAME && swift build)
+  - (cd $PROJECT_NAME && swift test)
