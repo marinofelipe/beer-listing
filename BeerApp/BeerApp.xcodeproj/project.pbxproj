@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		EDD7A2BD24E2091C00BAA418 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD7A2BC24E2091C00BAA418 /* Preview Assets.xcassets */; };
 		EDD7A2C824E2091E00BAA418 /* BeerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7A2C724E2091E00BAA418 /* BeerAppTests.swift */; };
 		EDD7A2D324E2091E00BAA418 /* BeerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7A2D224E2091E00BAA418 /* BeerAppUITests.swift */; };
+		EDD7A2E324E20D0D00BAA418 /* DiscoveryFeature in Frameworks */ = {isa = PBXBuildFile; productRef = EDD7A2E224E20D0D00BAA418 /* DiscoveryFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDD7A2E324E20D0D00BAA418 /* DiscoveryFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +81,7 @@
 				EDD7A2C624E2091E00BAA418 /* BeerAppTests */,
 				EDD7A2D124E2091E00BAA418 /* BeerAppUITests */,
 				EDD7A2B324E2091A00BAA418 /* Products */,
+				EDD7A2E124E20D0D00BAA418 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +133,13 @@
 			path = BeerAppUITests;
 			sourceTree = "<group>";
 		};
+		EDD7A2E124E20D0D00BAA418 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +156,9 @@
 			dependencies = (
 			);
 			name = BeerApp;
+			packageProductDependencies = (
+				EDD7A2E224E20D0D00BAA418 /* DiscoveryFeature */,
+			);
 			productName = BeerApp;
 			productReference = EDD7A2B224E2091A00BAA418 /* BeerApp.app */;
 			productType = "com.apple.product-type.application";
@@ -580,6 +593,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDD7A2E224E20D0D00BAA418 /* DiscoveryFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DiscoveryFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDD7A2AA24E2091A00BAA418 /* Project object */;
 }
