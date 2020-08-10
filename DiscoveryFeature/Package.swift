@@ -17,11 +17,19 @@ let package = Package(
             targets: ["DiscoveryRepository"]
         ),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(
+            name: "HTTPClient",
+            url: "https://github.com/marinofelipe/http_client",
+            .exact(.init(0, 0, 4))
+        )
+    ],
     targets: [
         .target(
             name: "DiscoveryRepository",
-            dependencies: []
+            dependencies: [
+                .product(name: "HTTPClient", package: "HTTPClient")
+            ]
         ),
         .testTarget(
             name: "DiscoveryRepositoryTests",
