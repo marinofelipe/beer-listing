@@ -50,7 +50,7 @@ final class DiscoveryRepositoryTests: XCTestCase {
             return (response, beerListDataFixture)
         }
 
-        var capturedValue: Page<[Beer], BeersNextPageQuery>?
+        var capturedValue: Page<[Beer], BeersNextPageQuery?>?
         try sut.fetchList(nextPageQuery: .initial, receiveOn: .main)
             .sink(receiveCompletion: { completion in
                 switch completion {

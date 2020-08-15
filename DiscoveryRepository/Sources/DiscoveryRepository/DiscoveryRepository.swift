@@ -11,7 +11,7 @@ public protocol DiscoveryRepositoryInterface {
     func fetchList(
         nextPageQuery: BeersNextPageQuery,
         receiveOn queue: DispatchQueue
-    ) throws -> AnyPublisher<Page<[Beer], BeersNextPageQuery>, DiscoveryRepositoryError>
+    ) throws -> AnyPublisher<Page<[Beer], BeersNextPageQuery?>, DiscoveryRepositoryError>
 }
 
 // MARK: - Error
@@ -60,20 +60,15 @@ public final class DiscoveryRepository: DiscoveryRepositoryInterface {
     public func fetchList(
         nextPageQuery: BeersNextPageQuery,
         receiveOn queue: DispatchQueue = .global(qos: .userInteractive)
-    ) throws -> AnyPublisher<Page<[Beer], BeersNextPageQuery>, DiscoveryRepositoryError> {
+    ) throws -> AnyPublisher<Page<[Beer], BeersNextPageQuery?>, DiscoveryRepositoryError> {
         try fetchListFromRemote(page: nextPageQuery.pageIndex, receiveOn: queue)
-            .tryMap { [logger] httpResponse -> Page<[Beer], BeersNextPageQuery> in
+            .tryMap { [logger] httpResponse -> Page<[Beer], BeersNextPageQuery?> in
                 switch httpResponse.value {
                 case let .success(beers):
                     logger.log(level: .debug, Logger.Message(stringLiteral: httpResponse.debugDescription))
 
-                    let repositoryBeers = beers
-                        .filter { $0.alcoholicStrength <= 5 } /// **business rule**: *filter out beers that are too alcoholic*
-                        .map(Beer.init(from:))
-
-                    var nextPageQuery = nextPageQuery
-                    nextPageQuery.incrementPage()
-                    return Page(data: repositoryBeers, nextPageQuery: nextPageQuery)
+                    let nextPageQuery = nextPageQuery.buildNextPage(withLastPageItemsCount: beers.count)
+                    return Page(data: beers.map(Beer.init(from:)), nextPageQuery: nextPageQuery)
                 case .failure:
                     logger.log(level: .error, Logger.Message(stringLiteral: httpResponse.debugDescription))
                     throw DiscoveryRepositoryError.unableToLoad

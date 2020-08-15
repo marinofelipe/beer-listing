@@ -1,7 +1,7 @@
 
 public struct Page<Data: Equatable, NextPageQuery: Equatable>: Equatable {
     public let data: Data
-    public let nextPageQuery: NextPageQuery
+    public let nextPageQuery: NextPageQuery?
 
     init(data: Data, nextPageQuery: NextPageQuery) {
         self.data = data

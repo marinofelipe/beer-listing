@@ -7,7 +7,7 @@ public struct Beer: Equatable {
     public let tagline: String
     public let description: String
     public let alcoholicStrength: Double
-    public let scaleOfBitterness: Double
+    public let scaleOfBitterness: Double?
     public let imageURL: URL?
 }
 

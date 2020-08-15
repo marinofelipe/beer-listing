@@ -20,6 +20,12 @@ public struct DiscoveryViewState {
         }
     }
     var isFirstPageLoaded: Bool = false
+    var isPageRequestInFlight: Bool = false
+
+    var items: [BeerItemViewModel]? {
+        guard case let .loaded(items) = state else { return nil }
+        return items
+    }
 
     static var initial: DiscoveryViewState {
         DiscoveryViewState(state: .loading)

@@ -7,7 +7,7 @@ extension Networking {
         let tagline: String
         let description: String
         let alcoholicStrength: Double
-        let scaleOfBitterness: Double
+        let scaleOfBitterness: Double?
         let imageURL: URL?
 
         private enum CodingKeys: String, CodingKey {

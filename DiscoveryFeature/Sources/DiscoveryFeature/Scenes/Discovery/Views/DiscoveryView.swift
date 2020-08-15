@@ -11,10 +11,12 @@ public struct DiscoveryView: View {
     public var body: some View {
         NavigationView {
             withAnimation {
-                containedView
-                    .navigationBarTitle(
-                        Text("discovery_feature_list_title", bundle: .module)
-                    )
+                Group {
+                    containedView
+                        .navigationBarTitle(
+                            Text("discovery_feature_list_title", bundle: .module)
+                        )
+                }
             }
         }
         .onAppear {
@@ -36,20 +38,21 @@ public struct DiscoveryView: View {
             return LoadingView()
                 .erase()
         case let .loaded(items):
-            return List(items) { item in
-//                NavigationLink(
-//                    destination: BeerDetailView(
-//                        viewModel: BeerDetailViewModel(
-//                            imageURL: item.imageURL,
-//                            name: item.name,
-//                            tagline: item.tagline,
-//                            description: item.description
-//                        )
-//                    )
-//                ) {
+            let enumeratedItems = Array(zip(items.indices, items))
+            return List {
+                ForEach(enumeratedItems, id: \.0) { index, item in
                     BeerCell(viewModel: item)
+                        .onAppear {
+                            viewModel.send(
+                                .beerItem(index: index, action: .onAppear)
+                            )
+                        }
 //                    // TODO: Add long press to show context menu - add to favorites
-//                }
+                }
+
+                if viewModel.viewState.isPageRequestInFlight {
+                    LoadingView()
+                }
             }
             .erase()
         }
