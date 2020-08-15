@@ -49,10 +49,6 @@ public struct DiscoveryView: View {
                         }
 //                    // TODO: Add long press to show context menu - add to favorites
                 }
-
-                if viewModel.viewState.isPageRequestInFlight {
-                    LoadingView()
-                }
             }
             .erase()
         }

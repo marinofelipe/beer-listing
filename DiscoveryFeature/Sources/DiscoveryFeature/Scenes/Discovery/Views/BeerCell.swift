@@ -1,6 +1,8 @@
 import SwiftUI
 import CommonUI
 
+import KingfisherSwiftUI
+
 struct BeerCell: View {
     let viewModel: BeerItemViewModel
 
@@ -10,7 +12,14 @@ struct BeerCell: View {
 
     public var body: some View {
         HStack(alignment: .center, spacing: 16) {
-            Image(systemName: "photo")
+            KFImage(viewModel.imageURL)
+                .placeholder {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40, height: 40)
+                }
+                .cancelOnDisappear(true)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 60, height: 60)

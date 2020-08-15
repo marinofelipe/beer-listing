@@ -22,6 +22,11 @@ let package = Package(
             url: "https://github.com/marinofelipe/http_client",
             .exact(.init(0, 0, 4))
         ),
+        .package(
+            name: "Kingfisher",
+            url: "https://github.com/onevcat/Kingfisher",
+            .exact(.init(5, 14, 1))
+        ),
         .package(name: "Common", path: "../Common"),
         .package(name: "CommonUI", path: "../CommonUI"),
         .package(name: "DiscoveryRepository", path: "../DiscoveryRepository")
@@ -32,7 +37,8 @@ let package = Package(
             dependencies: [
                 "Common",
                 "CommonUI",
-                "DiscoveryRepository"
+                "DiscoveryRepository",
+                .product(name: "KingfisherSwiftUI", package: "Kingfisher")
             ]
             // TODO: Mention this limitation
         ),
