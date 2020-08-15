@@ -40,3 +40,15 @@ public extension HTTPRequestBuilder {
         )
     }()
 }
+
+
+//public struct DiscoveryEnvironmentProvider {
+//    public static let current: BuildEnvironment = {
+//        #if DEBUG
+//        return .development
+//        #else
+//        return .production
+//        #endif
+//    }()
+//}
+

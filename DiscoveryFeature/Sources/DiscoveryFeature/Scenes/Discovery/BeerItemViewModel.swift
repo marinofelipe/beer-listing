@@ -6,20 +6,26 @@ struct BeerItemViewModel: Equatable, Identifiable {
     let name: String
     let tagline: String
     let description: String
-    let alcoholicStrength: Double
-    let scaleOfBitterness: Double
+    let alcoholicStrengthText: String
+    let alcoholicStrengthComplementaryText: String
+    let scaleOfBitternessText: String
     let imageURL: URL?
 }
 
 extension BeerItemViewModel {
     init(from repositoryBeer: DiscoveryRepository.Beer) {
+        let alcoholicStrengthText = String(format: "%.1f", repositoryBeer.alcoholicStrength)
+        let alcoholicStrengthComplementaryText = " % of alcohol"
+        let scaleOfBitternessText = "IBU scale: \(repositoryBeer.scaleOfBitterness)"
+
         self.init(
             id: repositoryBeer.id,
             name: repositoryBeer.name,
             tagline: repositoryBeer.tagline,
             description: repositoryBeer.description,
-            alcoholicStrength: repositoryBeer.alcoholicStrength,
-            scaleOfBitterness: repositoryBeer.scaleOfBitterness,
+            alcoholicStrengthText: alcoholicStrengthText,
+            alcoholicStrengthComplementaryText: alcoholicStrengthComplementaryText,
+            scaleOfBitternessText: scaleOfBitternessText,
             imageURL: repositoryBeer.imageURL
         )
     }

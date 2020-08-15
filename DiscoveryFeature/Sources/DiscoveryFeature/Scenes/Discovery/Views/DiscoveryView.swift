@@ -1,10 +1,3 @@
-//
-//  DiscoveryView.swift
-//  BeerApp
-//
-//  Created by Marino Felipe on 11.08.20.
-//
-
 import SwiftUI
 import CommonUI
 
@@ -17,7 +10,12 @@ public struct DiscoveryView: View {
 
     public var body: some View {
         NavigationView {
-            containedView
+            withAnimation {
+                containedView
+                    .navigationBarTitle(
+                        Text("discovery_feature_list_title", bundle: .module)
+                    )
+            }
         }
         .onAppear {
             viewModel.send(.onAppear)
@@ -39,23 +37,20 @@ public struct DiscoveryView: View {
                 .erase()
         case let .loaded(items):
             return List(items) { item in
-                NavigationLink(
-                    destination: BeerDetailView(
-                        viewModel: BeerDetailViewModel(
-                            imageURL: item.imageURL,
-                            name: item.name,
-                            tagline: item.tagline,
-                            description: item.description
-                        )
-                    )
-                ) {
-                    Text(item.name)
-                    // TODO: Add long press to show context menu - add to favorites
-                }
+//                NavigationLink(
+//                    destination: BeerDetailView(
+//                        viewModel: BeerDetailViewModel(
+//                            imageURL: item.imageURL,
+//                            name: item.name,
+//                            tagline: item.tagline,
+//                            description: item.description
+//                        )
+//                    )
+//                ) {
+                    BeerCell(viewModel: item)
+//                    // TODO: Add long press to show context menu - add to favorites
+//                }
             }
-            .navigationBarTitle(
-                Text("discovery_feature_list_title", bundle: .module)
-            )
             .erase()
         }
     }
@@ -73,12 +68,3 @@ public struct DiscoveryView: View {
 //    }
 //}
 #endif
-
-extension EmptyStateViewState {
-    init(from discoveryError: DiscoveryViewState.Error) {
-        switch discoveryError {
-        case .offline: self = .offline
-        case .unableToLoad: self = .genericError
-        }
-    }
-}

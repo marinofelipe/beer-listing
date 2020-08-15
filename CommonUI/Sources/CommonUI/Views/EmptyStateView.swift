@@ -52,6 +52,8 @@ public struct EmptyStateView: View {
                 .font(.headline)
                 .foregroundColor(.black)
 
+            Spacer()
+
             Button(action: {
                 onRetry()
             }, label: {
