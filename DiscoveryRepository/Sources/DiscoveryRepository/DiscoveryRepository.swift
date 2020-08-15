@@ -9,9 +9,9 @@ import Logging
 
 public protocol DiscoveryRepositoryInterface {
     func fetchList(
-        page: Int,
+        nextPageQuery: BeersNextPageQuery,
         receiveOn queue: DispatchQueue
-    ) throws -> AnyPublisher<[Beer], DiscoveryRepositoryError>
+    ) throws -> AnyPublisher<Page<[Beer], BeersNextPageQuery>, DiscoveryRepositoryError>
 }
 
 // MARK: - Error
@@ -34,7 +34,7 @@ public enum DiscoveryRepositoryError: Swift.Error, LocalizedError {
             return .unableToLoad
         }
     }
-}   
+}
 
 // MARK: - Concrete
 
@@ -58,18 +58,22 @@ public final class DiscoveryRepository: DiscoveryRepositoryInterface {
     }
 
     public func fetchList(
-        page: Int,
+        nextPageQuery: BeersNextPageQuery,
         receiveOn queue: DispatchQueue = .global(qos: .userInteractive)
-    ) throws -> AnyPublisher<[Beer], DiscoveryRepositoryError> {
-        try fetchListFromRemote(page: page, receiveOn: queue)
-            .tryMap { [logger] httpResponse -> [Beer] in
+    ) throws -> AnyPublisher<Page<[Beer], BeersNextPageQuery>, DiscoveryRepositoryError> {
+        try fetchListFromRemote(page: nextPageQuery.pageIndex, receiveOn: queue)
+            .tryMap { [logger] httpResponse -> Page<[Beer], BeersNextPageQuery> in
                 switch httpResponse.value {
-                case let .success(beerList):
+                case let .success(beers):
                     logger.log(level: .debug, Logger.Message(stringLiteral: httpResponse.debugDescription))
 
-                    /// **business rule**: *filter out beers that are too alcoholic*
-                    let beerList = beerList.filter { $0.alcoholicStrength <= 5 }
-                    return beerList.map(Beer.init(from:))
+                    let repositoryBeers = beers
+                        .filter { $0.alcoholicStrength <= 5 } /// **business rule**: *filter out beers that are too alcoholic*
+                        .map(Beer.init(from:))
+
+                    var nextPageQuery = nextPageQuery
+                    nextPageQuery.incrementPage()
+                    return Page(data: repositoryBeers, nextPageQuery: nextPageQuery)
                 case .failure:
                     logger.log(level: .error, Logger.Message(stringLiteral: httpResponse.debugDescription))
                     throw DiscoveryRepositoryError.unableToLoad

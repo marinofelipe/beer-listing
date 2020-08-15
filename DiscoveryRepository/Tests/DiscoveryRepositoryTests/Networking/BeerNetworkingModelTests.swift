@@ -12,7 +12,7 @@ final class BeerNetworkingModelTests: XCTestCase {
         let fixtureBeer = try jsonDecoder.decode(Networking.Beer.self, from: jsonFixtureData)
 
         let expectedBeer = Networking.Beer(
-            id: 1
+            id: 1,
             name: "The beer",
             tagline: "Best beer ever",
             description: "Great beer made by cows in the Swiss Alps",
