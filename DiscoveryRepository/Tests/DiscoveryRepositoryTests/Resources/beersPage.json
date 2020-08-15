@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "The beer",
+        "tagline": "Best beer ever",
+        "description": "Great beer made by cows in the Swiss Alps",
+        "abv": 4.5,
+        "ibu": 50,
+        "image_url": "www.someImageURL.com"
+    },
+    {
+        "id": 2,
+        "name": "Yet another beer",
+        "tagline": "Almost as good as the first beer",
+        "description": "Made in heaven!",
+        "abv": 4.3,
+        "ibu": 34,
+        "image_url": "www.someImageURL2.com"
+    },
+    {
+        "id": 3,
+        "name": "Some beer",
+        "tagline": "Not that good",
+        "description": "Stay focused!",
+        "abv": 5.1,
+        "ibu": 56,
+        "image_url": "www.someImageURL3.com"
+    }
+]
