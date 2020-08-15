@@ -7,64 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EDD7A2B624E2091A00BAA418 /* BeerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7A2B524E2091A00BAA418 /* BeerAppApp.swift */; };
-		EDD7A2B824E2091A00BAA418 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7A2B724E2091A00BAA418 /* ContentView.swift */; };
-		EDD7A2BA24E2091C00BAA418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD7A2B924E2091C00BAA418 /* Assets.xcassets */; };
-		EDD7A2BD24E2091C00BAA418 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD7A2BC24E2091C00BAA418 /* Preview Assets.xcassets */; };
-		EDD7A2C824E2091E00BAA418 /* BeerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7A2C724E2091E00BAA418 /* BeerAppTests.swift */; };
-		EDD7A2D324E2091E00BAA418 /* BeerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7A2D224E2091E00BAA418 /* BeerAppUITests.swift */; };
-		EDD7A2E324E20D0D00BAA418 /* DiscoveryFeature in Frameworks */ = {isa = PBXBuildFile; productRef = EDD7A2E224E20D0D00BAA418 /* DiscoveryFeature */; };
+		EDD7A2F124E2119400BAA418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7A2F024E2119400BAA418 /* AppDelegate.swift */; };
+		EDD7A2F324E2119400BAA418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7A2F224E2119400BAA418 /* SceneDelegate.swift */; };
+		EDD7A2F524E2119400BAA418 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7A2F424E2119400BAA418 /* ContentView.swift */; };
+		EDD7A2F724E2119B00BAA418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD7A2F624E2119B00BAA418 /* Assets.xcassets */; };
+		EDD7A2FA24E2119B00BAA418 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD7A2F924E2119B00BAA418 /* Preview Assets.xcassets */; };
+		EDD7A2FD24E2119B00BAA418 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD7A2FB24E2119B00BAA418 /* LaunchScreen.storyboard */; };
+		EDD7A30824E2119C00BAA418 /* BeerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7A30724E2119C00BAA418 /* BeerAppTests.swift */; };
+		EDD7A31324E2119D00BAA418 /* BeerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7A31224E2119D00BAA418 /* BeerAppUITests.swift */; };
+		EDD7A32224E2163900BAA418 /* DiscoveryFeature in Frameworks */ = {isa = PBXBuildFile; productRef = EDD7A32124E2163900BAA418 /* DiscoveryFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EDD7A2C424E2091E00BAA418 /* PBXContainerItemProxy */ = {
+		EDD7A30424E2119C00BAA418 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EDD7A2AA24E2091A00BAA418 /* Project object */;
+			containerPortal = EDD7A2E524E2119400BAA418 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EDD7A2B124E2091A00BAA418;
+			remoteGlobalIDString = EDD7A2EC24E2119400BAA418;
 			remoteInfo = BeerApp;
 		};
-		EDD7A2CF24E2091E00BAA418 /* PBXContainerItemProxy */ = {
+		EDD7A30F24E2119D00BAA418 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EDD7A2AA24E2091A00BAA418 /* Project object */;
+			containerPortal = EDD7A2E524E2119400BAA418 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EDD7A2B124E2091A00BAA418;
+			remoteGlobalIDString = EDD7A2EC24E2119400BAA418;
 			remoteInfo = BeerApp;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EDD7A2B224E2091A00BAA418 /* BeerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDD7A2B524E2091A00BAA418 /* BeerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAppApp.swift; sourceTree = "<group>"; };
-		EDD7A2B724E2091A00BAA418 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		EDD7A2B924E2091C00BAA418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EDD7A2BC24E2091C00BAA418 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EDD7A2BE24E2091C00BAA418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDD7A2C324E2091E00BAA418 /* BeerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDD7A2C724E2091E00BAA418 /* BeerAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAppTests.swift; sourceTree = "<group>"; };
-		EDD7A2C924E2091E00BAA418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDD7A2CE24E2091E00BAA418 /* BeerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDD7A2D224E2091E00BAA418 /* BeerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAppUITests.swift; sourceTree = "<group>"; };
-		EDD7A2D424E2091E00BAA418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDD7A2ED24E2119400BAA418 /* BeerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDD7A2F024E2119400BAA418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDD7A2F224E2119400BAA418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EDD7A2F424E2119400BAA418 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EDD7A2F624E2119B00BAA418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDD7A2F924E2119B00BAA418 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EDD7A2FC24E2119B00BAA418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDD7A2FE24E2119B00BAA418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDD7A30324E2119C00BAA418 /* BeerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDD7A30724E2119C00BAA418 /* BeerAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAppTests.swift; sourceTree = "<group>"; };
+		EDD7A30924E2119C00BAA418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDD7A30E24E2119D00BAA418 /* BeerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDD7A31224E2119D00BAA418 /* BeerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAppUITests.swift; sourceTree = "<group>"; };
+		EDD7A31424E2119D00BAA418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EDD7A2AF24E2091A00BAA418 /* Frameworks */ = {
+		EDD7A2EA24E2119400BAA418 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDD7A2E324E20D0D00BAA418 /* DiscoveryFeature in Frameworks */,
+				EDD7A32224E2163900BAA418 /* DiscoveryFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EDD7A2C024E2091E00BAA418 /* Frameworks */ = {
+		EDD7A30024E2119C00BAA418 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EDD7A2CB24E2091E00BAA418 /* Frameworks */ = {
+		EDD7A30B24E2119D00BAA418 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,66 +78,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EDD7A2A924E2091A00BAA418 = {
+		EDD7A2E424E2119400BAA418 = {
 			isa = PBXGroup;
 			children = (
-				EDD7A2B424E2091A00BAA418 /* BeerApp */,
-				EDD7A2C624E2091E00BAA418 /* BeerAppTests */,
-				EDD7A2D124E2091E00BAA418 /* BeerAppUITests */,
-				EDD7A2B324E2091A00BAA418 /* Products */,
-				EDD7A2E124E20D0D00BAA418 /* Frameworks */,
+				EDD7A2EF24E2119400BAA418 /* BeerApp */,
+				EDD7A30624E2119C00BAA418 /* BeerAppTests */,
+				EDD7A31124E2119D00BAA418 /* BeerAppUITests */,
+				EDD7A2EE24E2119400BAA418 /* Products */,
+				EDD7A32024E2163900BAA418 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		EDD7A2B324E2091A00BAA418 /* Products */ = {
+		EDD7A2EE24E2119400BAA418 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDD7A2B224E2091A00BAA418 /* BeerApp.app */,
-				EDD7A2C324E2091E00BAA418 /* BeerAppTests.xctest */,
-				EDD7A2CE24E2091E00BAA418 /* BeerAppUITests.xctest */,
+				EDD7A2ED24E2119400BAA418 /* BeerApp.app */,
+				EDD7A30324E2119C00BAA418 /* BeerAppTests.xctest */,
+				EDD7A30E24E2119D00BAA418 /* BeerAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EDD7A2B424E2091A00BAA418 /* BeerApp */ = {
+		EDD7A2EF24E2119400BAA418 /* BeerApp */ = {
 			isa = PBXGroup;
 			children = (
-				EDD7A2B524E2091A00BAA418 /* BeerAppApp.swift */,
-				EDD7A2B724E2091A00BAA418 /* ContentView.swift */,
-				EDD7A2B924E2091C00BAA418 /* Assets.xcassets */,
-				EDD7A2BE24E2091C00BAA418 /* Info.plist */,
-				EDD7A2BB24E2091C00BAA418 /* Preview Content */,
+				EDD7A2F024E2119400BAA418 /* AppDelegate.swift */,
+				EDD7A2F224E2119400BAA418 /* SceneDelegate.swift */,
+				EDD7A2F424E2119400BAA418 /* ContentView.swift */,
+				EDD7A2F624E2119B00BAA418 /* Assets.xcassets */,
+				EDD7A2FB24E2119B00BAA418 /* LaunchScreen.storyboard */,
+				EDD7A2FE24E2119B00BAA418 /* Info.plist */,
+				EDD7A2F824E2119B00BAA418 /* Preview Content */,
 			);
 			path = BeerApp;
 			sourceTree = "<group>";
 		};
-		EDD7A2BB24E2091C00BAA418 /* Preview Content */ = {
+		EDD7A2F824E2119B00BAA418 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				EDD7A2BC24E2091C00BAA418 /* Preview Assets.xcassets */,
+				EDD7A2F924E2119B00BAA418 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		EDD7A2C624E2091E00BAA418 /* BeerAppTests */ = {
+		EDD7A30624E2119C00BAA418 /* BeerAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				EDD7A2C724E2091E00BAA418 /* BeerAppTests.swift */,
-				EDD7A2C924E2091E00BAA418 /* Info.plist */,
+				EDD7A30724E2119C00BAA418 /* BeerAppTests.swift */,
+				EDD7A30924E2119C00BAA418 /* Info.plist */,
 			);
 			path = BeerAppTests;
 			sourceTree = "<group>";
 		};
-		EDD7A2D124E2091E00BAA418 /* BeerAppUITests */ = {
+		EDD7A31124E2119D00BAA418 /* BeerAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				EDD7A2D224E2091E00BAA418 /* BeerAppUITests.swift */,
-				EDD7A2D424E2091E00BAA418 /* Info.plist */,
+				EDD7A31224E2119D00BAA418 /* BeerAppUITests.swift */,
+				EDD7A31424E2119D00BAA418 /* Info.plist */,
 			);
 			path = BeerAppUITests;
 			sourceTree = "<group>";
 		};
-		EDD7A2E124E20D0D00BAA418 /* Frameworks */ = {
+		EDD7A32024E2163900BAA418 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -143,13 +149,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EDD7A2B124E2091A00BAA418 /* BeerApp */ = {
+		EDD7A2EC24E2119400BAA418 /* BeerApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDD7A2D724E2091E00BAA418 /* Build configuration list for PBXNativeTarget "BeerApp" */;
+			buildConfigurationList = EDD7A31724E2119D00BAA418 /* Build configuration list for PBXNativeTarget "BeerApp" */;
 			buildPhases = (
-				EDD7A2AE24E2091A00BAA418 /* Sources */,
-				EDD7A2AF24E2091A00BAA418 /* Frameworks */,
-				EDD7A2B024E2091A00BAA418 /* Resources */,
+				EDD7A2E924E2119400BAA418 /* Sources */,
+				EDD7A2EA24E2119400BAA418 /* Frameworks */,
+				EDD7A2EB24E2119400BAA418 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -157,71 +163,71 @@
 			);
 			name = BeerApp;
 			packageProductDependencies = (
-				EDD7A2E224E20D0D00BAA418 /* DiscoveryFeature */,
+				EDD7A32124E2163900BAA418 /* DiscoveryFeature */,
 			);
 			productName = BeerApp;
-			productReference = EDD7A2B224E2091A00BAA418 /* BeerApp.app */;
+			productReference = EDD7A2ED24E2119400BAA418 /* BeerApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EDD7A2C224E2091E00BAA418 /* BeerAppTests */ = {
+		EDD7A30224E2119C00BAA418 /* BeerAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDD7A2DA24E2091E00BAA418 /* Build configuration list for PBXNativeTarget "BeerAppTests" */;
+			buildConfigurationList = EDD7A31A24E2119D00BAA418 /* Build configuration list for PBXNativeTarget "BeerAppTests" */;
 			buildPhases = (
-				EDD7A2BF24E2091E00BAA418 /* Sources */,
-				EDD7A2C024E2091E00BAA418 /* Frameworks */,
-				EDD7A2C124E2091E00BAA418 /* Resources */,
+				EDD7A2FF24E2119C00BAA418 /* Sources */,
+				EDD7A30024E2119C00BAA418 /* Frameworks */,
+				EDD7A30124E2119C00BAA418 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EDD7A2C524E2091E00BAA418 /* PBXTargetDependency */,
+				EDD7A30524E2119C00BAA418 /* PBXTargetDependency */,
 			);
 			name = BeerAppTests;
 			productName = BeerAppTests;
-			productReference = EDD7A2C324E2091E00BAA418 /* BeerAppTests.xctest */;
+			productReference = EDD7A30324E2119C00BAA418 /* BeerAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EDD7A2CD24E2091E00BAA418 /* BeerAppUITests */ = {
+		EDD7A30D24E2119D00BAA418 /* BeerAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDD7A2DD24E2091E00BAA418 /* Build configuration list for PBXNativeTarget "BeerAppUITests" */;
+			buildConfigurationList = EDD7A31D24E2119D00BAA418 /* Build configuration list for PBXNativeTarget "BeerAppUITests" */;
 			buildPhases = (
-				EDD7A2CA24E2091E00BAA418 /* Sources */,
-				EDD7A2CB24E2091E00BAA418 /* Frameworks */,
-				EDD7A2CC24E2091E00BAA418 /* Resources */,
+				EDD7A30A24E2119D00BAA418 /* Sources */,
+				EDD7A30B24E2119D00BAA418 /* Frameworks */,
+				EDD7A30C24E2119D00BAA418 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EDD7A2D024E2091E00BAA418 /* PBXTargetDependency */,
+				EDD7A31024E2119D00BAA418 /* PBXTargetDependency */,
 			);
 			name = BeerAppUITests;
 			productName = BeerAppUITests;
-			productReference = EDD7A2CE24E2091E00BAA418 /* BeerAppUITests.xctest */;
+			productReference = EDD7A30E24E2119D00BAA418 /* BeerAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EDD7A2AA24E2091A00BAA418 /* Project object */ = {
+		EDD7A2E524E2119400BAA418 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					EDD7A2B124E2091A00BAA418 = {
+					EDD7A2EC24E2119400BAA418 = {
 						CreatedOnToolsVersion = 12.0;
 					};
-					EDD7A2C224E2091E00BAA418 = {
+					EDD7A30224E2119C00BAA418 = {
 						CreatedOnToolsVersion = 12.0;
-						TestTargetID = EDD7A2B124E2091A00BAA418;
+						TestTargetID = EDD7A2EC24E2119400BAA418;
 					};
-					EDD7A2CD24E2091E00BAA418 = {
+					EDD7A30D24E2119D00BAA418 = {
 						CreatedOnToolsVersion = 12.0;
-						TestTargetID = EDD7A2B124E2091A00BAA418;
+						TestTargetID = EDD7A2EC24E2119400BAA418;
 					};
 				};
 			};
-			buildConfigurationList = EDD7A2AD24E2091A00BAA418 /* Build configuration list for PBXProject "BeerApp" */;
+			buildConfigurationList = EDD7A2E824E2119400BAA418 /* Build configuration list for PBXProject "BeerApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -229,36 +235,37 @@
 				en,
 				Base,
 			);
-			mainGroup = EDD7A2A924E2091A00BAA418;
-			productRefGroup = EDD7A2B324E2091A00BAA418 /* Products */;
+			mainGroup = EDD7A2E424E2119400BAA418;
+			productRefGroup = EDD7A2EE24E2119400BAA418 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EDD7A2B124E2091A00BAA418 /* BeerApp */,
-				EDD7A2C224E2091E00BAA418 /* BeerAppTests */,
-				EDD7A2CD24E2091E00BAA418 /* BeerAppUITests */,
+				EDD7A2EC24E2119400BAA418 /* BeerApp */,
+				EDD7A30224E2119C00BAA418 /* BeerAppTests */,
+				EDD7A30D24E2119D00BAA418 /* BeerAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EDD7A2B024E2091A00BAA418 /* Resources */ = {
+		EDD7A2EB24E2119400BAA418 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDD7A2BD24E2091C00BAA418 /* Preview Assets.xcassets in Resources */,
-				EDD7A2BA24E2091C00BAA418 /* Assets.xcassets in Resources */,
+				EDD7A2FD24E2119B00BAA418 /* LaunchScreen.storyboard in Resources */,
+				EDD7A2FA24E2119B00BAA418 /* Preview Assets.xcassets in Resources */,
+				EDD7A2F724E2119B00BAA418 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EDD7A2C124E2091E00BAA418 /* Resources */ = {
+		EDD7A30124E2119C00BAA418 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EDD7A2CC24E2091E00BAA418 /* Resources */ = {
+		EDD7A30C24E2119D00BAA418 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,48 +275,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EDD7A2AE24E2091A00BAA418 /* Sources */ = {
+		EDD7A2E924E2119400BAA418 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDD7A2B824E2091A00BAA418 /* ContentView.swift in Sources */,
-				EDD7A2B624E2091A00BAA418 /* BeerAppApp.swift in Sources */,
+				EDD7A2F124E2119400BAA418 /* AppDelegate.swift in Sources */,
+				EDD7A2F324E2119400BAA418 /* SceneDelegate.swift in Sources */,
+				EDD7A2F524E2119400BAA418 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EDD7A2BF24E2091E00BAA418 /* Sources */ = {
+		EDD7A2FF24E2119C00BAA418 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDD7A2C824E2091E00BAA418 /* BeerAppTests.swift in Sources */,
+				EDD7A30824E2119C00BAA418 /* BeerAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EDD7A2CA24E2091E00BAA418 /* Sources */ = {
+		EDD7A30A24E2119D00BAA418 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDD7A2D324E2091E00BAA418 /* BeerAppUITests.swift in Sources */,
+				EDD7A31324E2119D00BAA418 /* BeerAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EDD7A2C524E2091E00BAA418 /* PBXTargetDependency */ = {
+		EDD7A30524E2119C00BAA418 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EDD7A2B124E2091A00BAA418 /* BeerApp */;
-			targetProxy = EDD7A2C424E2091E00BAA418 /* PBXContainerItemProxy */;
+			target = EDD7A2EC24E2119400BAA418 /* BeerApp */;
+			targetProxy = EDD7A30424E2119C00BAA418 /* PBXContainerItemProxy */;
 		};
-		EDD7A2D024E2091E00BAA418 /* PBXTargetDependency */ = {
+		EDD7A31024E2119D00BAA418 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EDD7A2B124E2091A00BAA418 /* BeerApp */;
-			targetProxy = EDD7A2CF24E2091E00BAA418 /* PBXContainerItemProxy */;
+			target = EDD7A2EC24E2119400BAA418 /* BeerApp */;
+			targetProxy = EDD7A30F24E2119D00BAA418 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		EDD7A2FB24E2119B00BAA418 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDD7A2FC24E2119B00BAA418 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		EDD7A2D524E2091E00BAA418 /* Debug */ = {
+		EDD7A31524E2119D00BAA418 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -370,7 +389,7 @@
 			};
 			name = Debug;
 		};
-		EDD7A2D624E2091E00BAA418 /* Release */ = {
+		EDD7A31624E2119D00BAA418 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -425,7 +444,7 @@
 			};
 			name = Release;
 		};
-		EDD7A2D824E2091E00BAA418 /* Debug */ = {
+		EDD7A31824E2119D00BAA418 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -435,7 +454,6 @@
 				DEVELOPMENT_TEAM = X9MK4PBNUW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BeerApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -443,11 +461,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = marinofelipe.com.BeerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		EDD7A2D924E2091E00BAA418 /* Release */ = {
+		EDD7A31924E2119D00BAA418 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -457,7 +475,6 @@
 				DEVELOPMENT_TEAM = X9MK4PBNUW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BeerApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,11 +482,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = marinofelipe.com.BeerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		EDD7A2DB24E2091E00BAA418 /* Debug */ = {
+		EDD7A31B24E2119D00BAA418 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -491,7 +508,7 @@
 			};
 			name = Debug;
 		};
-		EDD7A2DC24E2091E00BAA418 /* Release */ = {
+		EDD7A31C24E2119D00BAA418 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -513,7 +530,7 @@
 			};
 			name = Release;
 		};
-		EDD7A2DE24E2091E00BAA418 /* Debug */ = {
+		EDD7A31E24E2119D00BAA418 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -533,7 +550,7 @@
 			};
 			name = Debug;
 		};
-		EDD7A2DF24E2091E00BAA418 /* Release */ = {
+		EDD7A31F24E2119D00BAA418 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -556,38 +573,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EDD7A2AD24E2091A00BAA418 /* Build configuration list for PBXProject "BeerApp" */ = {
+		EDD7A2E824E2119400BAA418 /* Build configuration list for PBXProject "BeerApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDD7A2D524E2091E00BAA418 /* Debug */,
-				EDD7A2D624E2091E00BAA418 /* Release */,
+				EDD7A31524E2119D00BAA418 /* Debug */,
+				EDD7A31624E2119D00BAA418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDD7A2D724E2091E00BAA418 /* Build configuration list for PBXNativeTarget "BeerApp" */ = {
+		EDD7A31724E2119D00BAA418 /* Build configuration list for PBXNativeTarget "BeerApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDD7A2D824E2091E00BAA418 /* Debug */,
-				EDD7A2D924E2091E00BAA418 /* Release */,
+				EDD7A31824E2119D00BAA418 /* Debug */,
+				EDD7A31924E2119D00BAA418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDD7A2DA24E2091E00BAA418 /* Build configuration list for PBXNativeTarget "BeerAppTests" */ = {
+		EDD7A31A24E2119D00BAA418 /* Build configuration list for PBXNativeTarget "BeerAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDD7A2DB24E2091E00BAA418 /* Debug */,
-				EDD7A2DC24E2091E00BAA418 /* Release */,
+				EDD7A31B24E2119D00BAA418 /* Debug */,
+				EDD7A31C24E2119D00BAA418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDD7A2DD24E2091E00BAA418 /* Build configuration list for PBXNativeTarget "BeerAppUITests" */ = {
+		EDD7A31D24E2119D00BAA418 /* Build configuration list for PBXNativeTarget "BeerAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDD7A2DE24E2091E00BAA418 /* Debug */,
-				EDD7A2DF24E2091E00BAA418 /* Release */,
+				EDD7A31E24E2119D00BAA418 /* Debug */,
+				EDD7A31F24E2119D00BAA418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -595,11 +612,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EDD7A2E224E20D0D00BAA418 /* DiscoveryFeature */ = {
+		EDD7A32124E2163900BAA418 /* DiscoveryFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DiscoveryFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = EDD7A2AA24E2091A00BAA418 /* Project object */;
+	rootObject = EDD7A2E524E2119400BAA418 /* Project object */;
 }

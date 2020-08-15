@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:BeerApp/BeerApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DiscoveryFeature">
+   </FileRef>
+   <FileRef
+      location = "group:DiscoveryRepository">
+   </FileRef>
+   <FileRef
+      location = "group:Common">
+   </FileRef>
+   <FileRef
+      location = "group:CommonUI">
+   </FileRef>
+   <FileRef
+      location = "group:TestSupport">
+   </FileRef>
+</Workspace>
