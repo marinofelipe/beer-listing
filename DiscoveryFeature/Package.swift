@@ -5,39 +5,36 @@ import PackageDescription
 
 let package = Package(
     name: "DiscoveryFeature",
+    defaultLocalization: "en",
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
         // Provide the discovery feature module
         .library(
             name: "DiscoveryFeature",
             targets: ["DiscoveryFeature"]
-        ),
-        // Provide an API to business logic and data layer
-        .library(
-            name: "DiscoveryRepository",
-            targets: ["DiscoveryRepository"]
-        ),
+        )
     ],
     dependencies: [
         .package(
             name: "HTTPClient",
             url: "https://github.com/marinofelipe/http_client",
             .exact(.init(0, 0, 4))
-        )
+        ),
+        .package(name: "Common", path: "../Common"),
+        .package(name: "CommonUI", path: "../CommonUI"),
+        .package(name: "DiscoveryRepository", path: "../DiscoveryRepository")
     ],
     targets: [
         .target(
-            name: "DiscoveryRepository",
-            dependencies: [
-                .product(name: "HTTPClient", package: "HTTPClient")
-            ]
-        ),
-        .testTarget(
-            name: "DiscoveryRepositoryTests",
-            dependencies: ["DiscoveryRepository"]
-        ),
-        .target(
             name: "DiscoveryFeature",
-            dependencies: ["DiscoveryRepository"]
+            dependencies: [
+                "Common",
+                "CommonUI",
+                "DiscoveryRepository"
+            ]
+            // TODO: Mention this limitation
         ),
         .testTarget(
             name: "DiscoveryFeatureTests",
