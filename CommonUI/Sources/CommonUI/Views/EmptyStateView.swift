@@ -1,5 +1,7 @@
 import SwiftUI
 
+// MARK: - State
+
 public enum EmptyStateViewState: Equatable {
     case offline
     case genericError
@@ -26,6 +28,8 @@ public enum EmptyStateViewState: Equatable {
     }
 }
 
+// MARK: - View
+
 public struct EmptyStateView: View {
     let state: EmptyStateViewState
     let onRetry: () -> Void
@@ -39,7 +43,7 @@ public struct EmptyStateView: View {
     }
 
     public var body: some View {
-        VStack {
+        VStack(spacing: 8) {
             if state == .offline {
                 Image(systemName: "wifi.slash")
             }
@@ -47,18 +51,9 @@ public struct EmptyStateView: View {
             text()
                 .font(.headline)
                 .foregroundColor(.black)
-                .padding(6)
 
             Button(action: {
-                withAnimation(
-                    .interactiveSpring(
-                        response: 0.44,
-                        dampingFraction: 0.63,
-                        blendDuration: 0.67
-                    )
-                ) {
-                    onRetry()
-                }
+                onRetry()
             }, label: {
                 Text("common_ui_reload", bundle: .module)
             })
@@ -68,6 +63,7 @@ public struct EmptyStateView: View {
             .foregroundColor(.white)
             .squircleCornerRadius(8, borderColor: .blue)
         }
+        .padding(8)
         .fixedSize()
     }
 

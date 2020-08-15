@@ -11,8 +11,8 @@ public struct LoadingView: View {
             Text("common_ui_loading", bundle: .module)
                 .font(.headline)
                 .foregroundColor(.gray)
-                .padding(6)
         }
+        .padding(6)
         .fixedSize()
     }
 }
@@ -20,9 +20,7 @@ public struct LoadingView: View {
 #if DEBUG
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            LoadingView()
-        }
+        LoadingView()
     }
 }
 #endif
