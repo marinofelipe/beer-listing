@@ -1,0 +1,11 @@
+osx_image: xcode12
+language: swift
+
+env:
+  - PROJECT_NAME=BeerApp
+
+before_install:
+- bundle install
+
+script:
+  bundle exec fastlane test

@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "name": "The beer",
+    "tagline": "Best beer ever",
+    "description": "Great beer made by cows in the Swiss Alps",
+    "abv": 4.5,
+    "ibu": 50,
+    "image_url": "www.someImageURL.com"
+}
