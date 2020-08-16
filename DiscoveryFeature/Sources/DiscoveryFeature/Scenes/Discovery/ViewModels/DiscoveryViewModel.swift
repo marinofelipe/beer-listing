@@ -9,7 +9,7 @@ protocol DiscoveryViewModelInterface {
 }
 
 final class DiscoveryViewModel: DiscoveryViewModelInterface {
-    public var viewState: PassthroughSubject<DiscoveryViewState, Never>
+    var viewState: PassthroughSubject<DiscoveryViewState, Never>
     private var _viewState: DiscoveryViewState {
         didSet {
             viewState.send(_viewState)
@@ -92,3 +92,35 @@ extension DiscoveryViewState {
         }
     }
 }
+
+#if DEBUG
+struct DiscoveryViewModelFake: DiscoveryViewModelInterface {
+    var viewState = PassthroughSubject<DiscoveryViewState, Never>()
+
+    func send(_ action: DiscoveryAction) {
+        switch action {
+        case .onAppear, .onRetryTap:
+            viewState.send(.initial)
+            viewState.send(
+                .init(
+                    state: .loaded([]),
+                    isFirstPageLoaded: true,
+                    isPageRequestInFlight: false
+                )
+            )
+        case let .beerItem(_, action):
+            switch action {
+            case .onAppear:
+                viewState.send(
+                    .init(
+                        state: .loaded([]),
+                        isFirstPageLoaded: true,
+                        isPageRequestInFlight: false
+                    )
+                )
+            case .onLongPress, .onTap: break
+            }
+        }
+    }
+}
+#endif

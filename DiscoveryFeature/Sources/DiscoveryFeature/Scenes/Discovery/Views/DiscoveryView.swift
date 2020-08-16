@@ -8,7 +8,7 @@ struct DiscoveryView: View {
         self.viewStore = viewStore
     }
 
-    public var body: some View {
+    var body: some View {
         NavigationView {
             withAnimation {
                 Group {
@@ -63,14 +63,15 @@ struct DiscoveryView: View {
 }
 
 #if DEBUG
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DiscoveryView(
-//            viewModel: DiscoveryViewModel(
-//                initialState: DiscoveryViewState(state: .loading, page: 0),
-//                repository: BeerRepositor
-//            )
-//        )
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        DiscoveryView(
+            viewStore:
+                DiscoveryViewStore(
+                    viewModel: DiscoveryViewModelFake(),
+                    coordinator: DiscoveryCoordinatorFake()
+                )
+        )
+    }
+}
 #endif

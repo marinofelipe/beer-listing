@@ -2,8 +2,10 @@ osx_image: xcode12
 language: swift
 
 env:
-  - PROJECT_NAME=BeerList
-install: (cd $PROJECT_NAME && swift package update)
+  - PROJECT_NAME=BeerApp
+
+before_install:
+- bundle install
+
 script:
-  - (cd $PROJECT_NAME && swift build)
-  - (cd $PROJECT_NAME && swift test)
+  bundle exec fastlane test

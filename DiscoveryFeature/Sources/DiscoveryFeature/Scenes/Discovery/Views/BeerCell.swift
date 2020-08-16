@@ -10,7 +10,7 @@ struct BeerCell: View {
         self.viewModel = viewModel
     }
 
-    public var body: some View {
+    var body: some View {
         HStack(alignment: .center, spacing: 16) {
             KFImage(viewModel.imageURL)
                 .placeholder {

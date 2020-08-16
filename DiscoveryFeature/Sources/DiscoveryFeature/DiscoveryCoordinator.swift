@@ -24,3 +24,11 @@ final class DiscoveryCoordinator: Coordinator, DiscoveryCoordinatorInterface {
         BeerDetailView(viewModel: itemViewModel)
     }
 }
+
+#if DEBUG
+struct DiscoveryCoordinatorFake: DiscoveryCoordinatorInterface {
+    func presentDetailView(for itemViewModel: BeerItemViewModel) -> BeerDetailView {
+        BeerDetailView(viewModel: itemViewModel)
+    }
+}
+#endif

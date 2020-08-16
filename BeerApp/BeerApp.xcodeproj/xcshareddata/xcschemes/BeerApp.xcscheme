@@ -78,26 +78,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EDD7A30224E2119C00BAA418"
-               BuildableName = "BeerAppTests.xctest"
-               BlueprintName = "BeerAppTests"
-               ReferencedContainer = "container:BeerApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EDD7A30D24E2119D00BAA418"
-               BuildableName = "BeerAppUITests.xctest"
-               BlueprintName = "BeerAppUITests"
-               ReferencedContainer = "container:BeerApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "CommonTests"
                BuildableName = "CommonTests"
                BlueprintName = "CommonTests"

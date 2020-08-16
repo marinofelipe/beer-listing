@@ -1,4 +1,4 @@
-public struct DiscoveryViewState: Equatable {
+struct DiscoveryViewState: Equatable {
     enum Error: Equatable {
         case offline
         case unableToLoad

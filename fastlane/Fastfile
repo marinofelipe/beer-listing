@@ -1,0 +1,17 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Run the tests for the app target"
+  lane :test do
+  	Dir.chdir("../BeerApp") do
+      sh("xcodebuild","-resolvePackageDependencies")
+    end
+
+	scan(
+	    workspace: 'BeerApp.xcworkspace',
+	    scheme: 'BeerApp',
+	    devices: ['iPhone 8'],
+	    code_coverage: true
+  	)
+  end
+end

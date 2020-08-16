@@ -35,12 +35,8 @@ final class DiscoveryViewStore: ObservableObject {
 
 private extension DiscoveryViewStore {
     func bindToViewModel() {
-        if #available(iOS 14, *) {
-            viewModel.viewState.assign(to: &$viewState)
-        } else {
-            cancellable = viewModel.viewState.eraseToAnyPublisher().sink { viewState in
-                self.viewState = viewState
-            }
+        cancellable = viewModel.viewState.eraseToAnyPublisher().sink { viewState in
+            self.viewState = viewState
         }
     }
 }
