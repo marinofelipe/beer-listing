@@ -59,6 +59,7 @@ struct BeerCell_Previews: PreviewProvider {
                 alcoholicStrengthText: "% 5",
                 alcoholicStrengthComplementaryText: "of alcohol",
                 scaleOfBitternessText: "% 20",
+                scaleOfBitternessTextComplementaryText: "50",
                 imageURL: nil
             )
         )

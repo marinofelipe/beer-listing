@@ -46,6 +46,9 @@ final class DiscoveryViewModel: DiscoveryViewModelInterface {
             case .onTap:
                 // could e.g. call a tracker to collect data about the user event
                 debugPrint("Did tap item at index: \(index)")
+            case .onLongPress:
+                // could e.g. save item at favorites by calling repository
+                debugPrint("Did long press item at index: \(index)")
             default: break
             }
         }

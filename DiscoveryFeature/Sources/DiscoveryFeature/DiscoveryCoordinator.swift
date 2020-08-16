@@ -21,13 +21,6 @@ final class DiscoveryCoordinator: Coordinator, DiscoveryCoordinatorInterface {
     }
 
     func presentDetailView(for itemViewModel: BeerItemViewModel) -> BeerDetailView {
-        BeerDetailView(viewModel:
-            BeerDetailViewModel(
-                imageURL: itemViewModel.imageURL,
-                name: itemViewModel.name,
-                tagline: itemViewModel.tagline,
-                description: itemViewModel.description
-            )
-        )
+        BeerDetailView(viewModel: itemViewModel)
     }
 }

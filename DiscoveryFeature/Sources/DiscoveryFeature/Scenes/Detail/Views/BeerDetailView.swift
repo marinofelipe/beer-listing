@@ -1,42 +1,63 @@
-//
-//  BeerDetailView.swift
-//  BeerApp
-//
-//  Created by Marino Felipe on 11.08.20.
-//
-
 import SwiftUI
-
-struct BeerDetailViewModel {
-    let imageURL: URL?
-    let name: String
-    let tagline: String
-    let description: String
-}
+import KingfisherSwiftUI
 
 struct BeerDetailView: View {
-    private let viewModel: BeerDetailViewModel
+    private let viewModel: BeerItemViewModel
 
-    init(viewModel: BeerDetailViewModel) {
+    init(viewModel: BeerItemViewModel) {
         self.viewModel = viewModel
     }
 
      var body: some View {
-        VStack {
-            Image(systemName: "photo")
-                .resizable()
-                .scaledToFit()
+        GeometryReader { geometryProxy in
+            ScrollView {
+                VStack(spacing: 16) {
+                    KFImage(viewModel.imageURL)
+                        .placeholder {
+                            Image(systemName: "photo")
+                                .resizable()
+                        }
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: geometryProxy.size.height * 0.4)
+
+                    HStack {
+                        if let scaleOfBitternessText = viewModel.scaleOfBitternessText {
+                            InformationView(titleText: "IBU", valueText: "\(scaleOfBitternessText)%")
+
+                            Divider()
+                                .frame(height: 16)
+                        }
+
+                        InformationView(titleText: "ABV", valueText: "\(viewModel.alcoholicStrengthText)%")
+                    }
+                    .padding(8)
+                    .background(Color(UIColor.lightGray.withAlphaComponent(0.3)))
+                    .squircleCornerRadius(8, borderColor: Color(.systemBackground))
+
+                    Text(viewModel.tagline)
+                        .font(.title)
+                        .bold()
+                    Text(viewModel.description)
+                        .font(.subheadline)
+                }
                 .padding()
-            Text(viewModel.tagline)
-                .font(.headline)
-                .padding()
-            Text(viewModel.description)
-                .font(.subheadline)
-            Spacer()
+                .navigationBarTitle(Text(viewModel.name))
+            }
         }
-        .navigationBarTitle(
-            Text(viewModel.name)
-        )
+    }
+}
+
+private struct InformationView: View {
+    let titleText: String
+    let valueText: String
+
+    var body: some View {
+        HStack {
+            Text(titleText)
+                .bold()
+            Text(valueText)
+        }
     }
 }
 
@@ -44,12 +65,16 @@ struct BeerDetailView: View {
 struct BeerDetailView_Previews: PreviewProvider {
     static var previews: some View {
         BeerDetailView(
-        viewModel:
-            BeerDetailViewModel(
-                imageURL: nil,
-                name: "Beer name",
-                tagline: "This is the best beer ever",
-                description: "Some description"
+            viewModel: BeerItemViewModel(
+                id: 1,
+                name: "The Beer",
+                tagline: "What a beer",
+                description: "larger description",
+                alcoholicStrengthText: "% 5",
+                alcoholicStrengthComplementaryText: "of alcohol",
+                scaleOfBitternessText: "% 20",
+                scaleOfBitternessTextComplementaryText: "50",
+                imageURL: nil
             )
         )
     }

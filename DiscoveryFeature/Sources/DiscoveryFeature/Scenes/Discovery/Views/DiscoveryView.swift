@@ -49,12 +49,14 @@ struct DiscoveryView: View {
                                 )
                             }
                             .contextMenu {
-                                Text("Add to favorites")
+                                Button("Add to favorites") {
+                                    viewStore.send(.beerItem(index: index, action: .onLongPress))
+                                }
                             }
-                            // TODO: Add long press to show context menu - add to favorites
                     }
                 }
             }
+            .transition(.slide)
             .erase()
         }
     }
