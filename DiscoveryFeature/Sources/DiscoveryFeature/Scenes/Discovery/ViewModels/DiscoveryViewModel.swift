@@ -49,7 +49,6 @@ final class DiscoveryViewModel: DiscoveryViewModelInterface {
             case .onLongPress:
                 // could e.g. save item at favorites by calling repository
                 debugPrint("Did long press item at index: \(index)")
-            default: break
             }
         }
     }

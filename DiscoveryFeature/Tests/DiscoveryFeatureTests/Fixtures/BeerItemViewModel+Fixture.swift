@@ -18,6 +18,7 @@ extension Fixture {
             alcoholicStrengthText: "5.1",
             alcoholicStrengthComplementaryText: " % of alcohol",
             scaleOfBitternessText: nil,
+            scaleOfBitternessTextComplementaryText: nil,
             imageURL: URL(string: "www.someImageURL.com")
         )
     }

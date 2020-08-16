@@ -25,6 +25,15 @@ extension Fixture {
                 scaleOfBitterness: 34,
                 imageURL: URL(string: "www.someImageURL2.com")
             ),
+            Beer(
+                id: 3,
+                name: "Some beer",
+                tagline: "Not that good",
+                description: "Stay focused!",
+                alcoholicStrength: 5.1,
+                scaleOfBitterness: 56,
+                imageURL: URL(string: "www.someImageURL3.com")
+            )
         ]
     }
 }

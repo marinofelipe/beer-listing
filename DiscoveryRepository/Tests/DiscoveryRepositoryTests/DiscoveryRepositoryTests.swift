@@ -65,8 +65,6 @@ final class DiscoveryRepositoryTests: XCTestCase {
 
         wait(for: [runExpectation], timeout: 0.5)
 
-        /// **The expected business rule is that**: Beers with `alcoholicStrength > 5` shouldn't be exposed to the users.
-        /// That's why, `only two beers from the fixture JSON response beersPage.json` are expected to be returned.
         let expectedValue = Fixture.makeArrayOfBeer()
         XCTAssertEqual(capturedValue?.data, expectedValue)
 
