@@ -93,6 +93,11 @@
                BlueprintName = "CommonUITests"
                ReferencedContainer = "container:../CommonUI">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "EmptyStateViewSnapshotTests/testWithOfflineState()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">
