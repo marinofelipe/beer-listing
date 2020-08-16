@@ -1,11 +1,11 @@
 import SwiftUI
 import CommonUI
 
-public struct DiscoveryView: View {
-    @ObservedObject private var viewModel: DiscoveryViewModel
+struct DiscoveryView: View {
+    @ObservedObject private var viewStore: DiscoveryViewStore
 
-    public init(viewModel: DiscoveryViewModel) {
-        self.viewModel = viewModel
+    init(viewStore: DiscoveryViewStore) {
+        self.viewStore = viewStore
     }
 
     public var body: some View {
@@ -20,17 +20,17 @@ public struct DiscoveryView: View {
             }
         }
         .onAppear {
-            viewModel.send(.onAppear)
+            viewStore.send(.onAppear)
         }
     }
 
     private var containedView: some View {
-        switch viewModel.viewState.state {
+        switch viewStore.viewState.state {
         case let .error(error):
             return EmptyStateView(
                 state: EmptyStateViewState.init(from: error),
                 onRetry: {
-                    viewModel.send(.onRetryTap)
+                    viewStore.send(.onRetryTap)
                 }
             )
             .erase()
@@ -41,13 +41,18 @@ public struct DiscoveryView: View {
             let enumeratedItems = Array(zip(items.indices, items))
             return List {
                 ForEach(enumeratedItems, id: \.0) { index, item in
-                    BeerCell(viewModel: item)
-                        .onAppear {
-                            viewModel.send(
-                                .beerItem(index: index, action: .onAppear)
-                            )
-                        }
-//                    // TODO: Add long press to show context menu - add to favorites
+                    NavigationLink(destination: viewStore.detailView(for: item)) {
+                        BeerCell(viewModel: item)
+                            .onAppear {
+                                viewStore.send(
+                                    .beerItem(index: index, action: .onAppear)
+                                )
+                            }
+                            .contextMenu {
+                                Text("Add to favorites")
+                            }
+                            // TODO: Add long press to show context menu - add to favorites
+                    }
                 }
             }
             .erase()

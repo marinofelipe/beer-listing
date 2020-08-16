@@ -1,12 +1,13 @@
 import Foundation
 import Common
+import CommonUI
 import CombineHTTPClient
 import DiscoveryRepository
 import HTTPClientCore
 import SwiftUI
 
 public protocol DiscoveryEnvironmentFlowFactory {
-    func makeStartingView() -> AnyView
+    func makeCoordinator() -> Coordinator
 }
 
 public struct DiscoveryEnvironment: DiscoveryEnvironmentFlowFactory {
@@ -22,13 +23,8 @@ public struct DiscoveryEnvironment: DiscoveryEnvironmentFlowFactory {
         )
     }
 
-    public func makeStartingView() -> AnyView {
-        DiscoveryView(
-            viewModel: DiscoveryViewModel(
-                initialState: DiscoveryViewState.initial,
-                repository: repository
-            )
-        ).erase()
+    public func makeCoordinator() -> Coordinator {
+        DiscoveryCoordinator(environment: self)
     }
 }
 

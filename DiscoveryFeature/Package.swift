@@ -29,7 +29,8 @@ let package = Package(
         ),
         .package(name: "Common", path: "../Common"),
         .package(name: "CommonUI", path: "../CommonUI"),
-        .package(name: "DiscoveryRepository", path: "../DiscoveryRepository")
+        .package(name: "DiscoveryRepository", path: "../DiscoveryRepository"),
+        .package(name: "TestSupport", path: "../TestSupport")
     ],
     targets: [
         .target(
@@ -44,7 +45,10 @@ let package = Package(
         ),
         .testTarget(
             name: "DiscoveryFeatureTests",
-            dependencies: ["DiscoveryFeature"]
+            dependencies: [
+                "DiscoveryFeature",
+                "TestSupport"
+            ]
         ),
     ]
 )

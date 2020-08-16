@@ -1,5 +1,7 @@
 import struct Foundation.URL
 
+import TestSupport
+
 @testable import DiscoveryRepository
 
 extension Fixture {

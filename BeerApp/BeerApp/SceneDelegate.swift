@@ -18,7 +18,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         let discoveryEnvironment = DiscoveryEnvironment()
-        let discoveryStartingView = discoveryEnvironment.makeStartingView()
+        let discoveryCoordinator = discoveryEnvironment.makeCoordinator()
+        let discoveryStartingView = discoveryCoordinator.start()
 
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

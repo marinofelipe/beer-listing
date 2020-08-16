@@ -1,10 +1,10 @@
-public struct DiscoveryViewState {
-    enum Error {
+public struct DiscoveryViewState: Equatable {
+    enum Error: Equatable {
         case offline
         case unableToLoad
     }
 
-    enum ViewState {
+    enum ViewState: Equatable {
         case loaded([BeerItemViewModel])
         case loading
         case error(_ error: Error)
