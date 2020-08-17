@@ -111,9 +111,12 @@ I generally like to work with a Workspace split into separate projects.
 It allows creating the modules composed by `CocoaTouch framework` (the module code), `standalone app`, and `test` targets. 
 For this case I wanted to build the app using SPM, since it is now a bit more mature, and e.g supports resources and localization. 
 
-Downside is that standalone apps can't be built on Swift Packages, which is pretty good for modular apps.  I believe though that in the future iOS targets would be definable within a package.
+Downsides of using Packages are that:
+- Standalone apps can't be built on Swift Packages, which is pretty good for modular apps.  I believe though that in the future iOS targets will be definable within a package.
 
-Of course that, standalone apps, and highly modular features are not always needed. It varies from case by case. But event then, a modular codebase will always bring benefits such as better separation of concerns, improved build times, decoupled, reusable and scalable code.
+Of course that, standalone apps, and high modularity are not always needed. It varies from case by case. But event then, a modular codebase will always bring benefits such as better separation of concerns, improved build times, decoupled, reusable and scalable code.
+
+- So far, SwiftUI previews only work properly when the target has no dependencies.
 
 ### Snapshot tests
 With proper time snapshot tests could be increased to cover different conditions, e.g. dark mode, compressed size, with large and short text, inside a smaller parent, etc.

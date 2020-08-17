@@ -41,7 +41,6 @@ let package = Package(
                 "DiscoveryRepository",
                 .product(name: "KingfisherSwiftUI", package: "Kingfisher")
             ]
-            // TODO: Mention this limitation
         ),
         .testTarget(
             name: "DiscoveryFeatureTests",
