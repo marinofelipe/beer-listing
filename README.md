@@ -37,7 +37,25 @@ The same concept can be found on widely known patterns such as VIPER.
 
 The flow is done with MVVM-C, and the repository pattern is used to take care of model / domain layer, encapsulating and dealing with data access via injected networking and/or cache services.
 
-#### 1. Presentation layer 
+#### 1. Presentation layer
+
+##### View
+All views are SwiftUI views, that are composed to form whole screens.
+
+The view receives, retains and observe a view store instance, keeping itself up to date with the latest view state. All view actions are sent to the store, which may generate view state changes.
+
+More about on why a view store instead of a view model, can be found in the [Coordinators section](#coordinators).
+
+##### View model
+The view model contains all business logic, it has a single output: a view state.
+
+###### View State
+Inspired by state in Redux architectures, ViewState is an Equatable value type, that makes it easier to diff and reason about the states of the UI. It guarantees that the view has a valid state, and since SwiftUI only redraws what changed, there's no performance issues on having a single Published view state property.
+
+###### Actions
+The view model has a single enntry point / input, a function that receives an action.
+Actions are simple value type enums, that clearly define events that can happen in an app.
+They can be composed from items to screen actions, and are the starting point for state changes.
 
 ##### Coordinators
 Bridged from the UIKit world, coordinators are responsible for managing flows, and in some codebases also to set up the scene by injecting all its dependencies.
@@ -50,17 +68,6 @@ This should be always avoided, no matter if for UIKit or SwiftUI, view models sh
 
 Therefore, a bridge object was introduced, view store, that connects the view with the view model, and communicates with the Coordinator. Not ideal, off course, it introduces more complexity, and its not actually a view store, but in other hand it makes it easier to test a view, since the view model can have an interface and easily get stimulated to emit view state changes, and since through it the UI logic is not leaked into the view model.
 Another alternative would be to also add a coordinator as a dependency of the view, but this in my opinion would mess the data flow.
-
-##### View model
-The view model contains all business logic, it has a single output: a view state.
-
-###### View State
-Inspired by state in Redux architectures, ViewState is an Equatable value type, that makes it easier to diff and reason about the states of the UI. It guarantees that the view has a valid state, and since SwiftUI only redraws what changed, there's no performance issues on having a single Published view state property.
-
-###### Actions
-The view model has a single enntry point / input, a function that receives an action.
-Actions are simple value type enums, that clearly define events that can happen in an app.
-They can be composed from items to screen actions, and are the starting point for state changes.
 
 #### 2. Domain layer
 The repository pattern is used to provide access to domains. They hide data access layer underneath, by receiving instances of services to consume networking or cached data.
