@@ -10,14 +10,10 @@ struct DiscoveryView: View {
 
     var body: some View {
         NavigationView {
-            withAnimation {
-                Group {
-                    containedView
-                        .navigationBarTitle(
-                            Text("discovery_feature_list_title", bundle: .module)
-                        )
-                }
-            }
+            containedView
+                .navigationBarTitle(
+                    Text("discovery_feature_list_title", bundle: .module)
+                )
         }
         .onAppear {
             viewStore.send(.onAppear)
@@ -56,7 +52,6 @@ struct DiscoveryView: View {
                     }
                 }
             }
-            .transition(.slide)
             .erase()
         }
     }
